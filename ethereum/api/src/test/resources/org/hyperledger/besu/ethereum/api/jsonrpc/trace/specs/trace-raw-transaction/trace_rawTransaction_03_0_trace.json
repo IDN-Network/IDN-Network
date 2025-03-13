@@ -1,0 +1,35 @@
+{
+  "comment" : "Deploy contract that will self-destruct when called.",
+  "request" : {
+    "jsonrpc" : "2.0",
+    "method" : "trace_rawTransaction",
+    "params" : [ "0xf85d1781ef83fffff28080906004600c60003960046000f3600035ff1ca0de34cea135096251fed1e795829a7fcc86c83e1d0c4deeff6076f58ecb08374ba0683c9a7f8cf19bb073cf12dd99a72b946ba4b2adb9ece7d8ad357860a4d6e973", [ "trace" ] ],
+    "id" : 54
+  },
+  "response" : {
+    "jsonrpc" : "2.0",
+    "result" : {
+      "output" : "0x600035ff",
+      "stateDiff" : null,
+      "trace" : [ {
+        "action" : {
+          "from" : "0x627306090abab3a6e1400e9345bc60c78a8bef57",
+          "gas" : "0xff300e",
+          "init" : "0x6004600c60003960046000f3600035ff",
+          "value" : "0x0"
+        },
+        "result" : {
+          "address" : "0x3d49d1ef2ade060a33c6e6aa213513a7ee9a6241",
+          "code" : "0x600035ff",
+          "gasUsed" : "0x338"
+        },
+        "subtraces" : 0,
+        "traceAddress" : [ ],
+        "type" : "create"
+      } ],
+      "vmTrace" : null
+    },
+    "id" : 54
+  },
+  "statusCode" : 200
+}

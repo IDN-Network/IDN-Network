@@ -1,0 +1,33 @@
+{
+  "comment" : "Various exceptional halt cases. INVALID_JUMP_DESTINATION.",
+  "request" : {
+    "jsonrpc" : "2.0",
+    "method" : "trace_rawTransaction",
+    "params" : [ "0xf8611e81ef83fffff29400e000000000000000000000000000000000000080801ca0d787034c104063b0c3358d5eb0eb1b5e6d6b0f466fe41c0f5b40abbb87f0b8bda02b5e0a4de7b6209d2a91ce30efb41b93f6e9f78ff57cbc35a1b290944856bd35", [ "trace" ] ],
+    "id" : 74
+  },
+  "response" : {
+    "jsonrpc" : "2.0",
+    "result" : {
+      "output" : "0x",
+      "stateDiff" : null,
+      "trace" : [ {
+        "action" : {
+          "callType" : "call",
+          "from" : "0xfe3b557e8fb62b89f4916b721be55ceb828dbd73",
+          "gas" : "0xffadea",
+          "input" : "0x",
+          "to" : "0x00e0000000000000000000000000000000000000",
+          "value" : "0x0"
+        },
+        "error" : "Bad jump destination",
+        "subtraces" : 0,
+        "traceAddress" : [ ],
+        "type" : "call"
+      } ],
+      "vmTrace" : null
+    },
+    "id" : 74
+  },
+  "statusCode" : 200
+}

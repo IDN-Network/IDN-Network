@@ -1,0 +1,43 @@
+{
+  "comment" : "Various exceptional halt cases. INVALID_JUMP_DESTINATION.",
+  "request" : {
+    "jsonrpc" : "2.0",
+    "method" : "trace_rawTransaction",
+    "params" : [ "0xf8611e81ef83fffff29400e000000000000000000000000000000000000080801ca0d787034c104063b0c3358d5eb0eb1b5e6d6b0f466fe41c0f5b40abbb87f0b8bda02b5e0a4de7b6209d2a91ce30efb41b93f6e9f78ff57cbc35a1b290944856bd35", [ "vmTrace" ] ],
+    "id" : 127
+  },
+  "response" : {
+    "jsonrpc" : "2.0",
+    "result" : {
+      "output" : "0x",
+      "stateDiff" : null,
+      "trace" : [ ],
+      "vmTrace" : {
+        "code" : "0x60ff5660016002",
+        "ops" : [ {
+          "cost" : 3,
+          "ex" : {
+            "mem" : null,
+            "push" : [ "0xff" ],
+            "store" : null,
+            "used" : 16756199
+          },
+          "pc" : 0,
+          "sub" : null
+        }, {
+          "cost" : 8,
+          "ex" : {
+            "mem" : null,
+            "push" : [ ],
+            "store" : null,
+            "used" : 16756191
+          },
+          "pc" : 2,
+          "sub" : null
+        } ]
+      }
+    },
+    "id" : 127
+  },
+  "statusCode" : 200
+}

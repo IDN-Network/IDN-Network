@@ -1,0 +1,33 @@
+{
+  "comment" : "Various exceptional halt cases. INSUFFICIENT_STACK_ITEMS.",
+  "request" : {
+    "jsonrpc" : "2.0",
+    "method" : "trace_rawTransaction",
+    "params" : [ "0xf8611e81ef83fffff29400d000000000000000000000000000000000000080801ba0e8609ea3fef696eceeba6ad4d66ad743412215a30fa9fdb1cbec878fdc9bdf5aa01304ec7b176a6ea56330f4c65d30e4c2226940e41d8ade0291d5d63d68903bb4", [ "trace" ] ],
+    "id" : 73
+  },
+  "response" : {
+    "jsonrpc" : "2.0",
+    "result" : {
+      "output" : "0x",
+      "stateDiff" : null,
+      "trace" : [ {
+        "action" : {
+          "callType" : "call",
+          "from" : "0xfe3b557e8fb62b89f4916b721be55ceb828dbd73",
+          "gas" : "0xffadea",
+          "input" : "0x",
+          "to" : "0x00d0000000000000000000000000000000000000",
+          "value" : "0x0"
+        },
+        "error" : "Stack underflow",
+        "subtraces" : 0,
+        "traceAddress" : [ ],
+        "type" : "call"
+      } ],
+      "vmTrace" : null
+    },
+    "id" : 73
+  },
+  "statusCode" : 200
+}

@@ -1,0 +1,48 @@
+{
+  "comment" : "Revert.",
+  "request" : {
+    "jsonrpc" : "2.0",
+    "method" : "trace_rawTransaction",
+    "params" : [ "0xf8611e81ef83fffff294011000000000000000000000000000000000000080801ba0217729615fe6b3eee0051fe7e0b78a7527a6f896dffd606de0da276e89b920f6a02c3ac4a267ef4056240ef774e62f20fbd8bbe16e07498ca1fdda0ba1be668e2b", [ "stateDiff" ] ],
+    "id" : 24
+  },
+  "response" : {
+    "jsonrpc" : "2.0",
+    "result" : {
+      "output" : "0x7d88c1856cc95352",
+      "stateDiff" : {
+        "0x0000000000000000000000000000000000000000" : {
+          "balance" : {
+            "*" : {
+              "from" : "0x393f0f18385c0b29e",
+              "to" : "0x393f0f183860d6418"
+            }
+          },
+          "code" : "=",
+          "nonce" : "=",
+          "storage" : { }
+        },
+        "0xfe3b557e8fb62b89f4916b721be55ceb828dbd73" : {
+          "balance" : {
+            "*" : {
+              "from" : "0xffffffffffffffffffffffffffffffffd27fb671b",
+              "to" : "0xffffffffffffffffffffffffffffffffd27aeb5a1"
+            }
+          },
+          "code" : "=",
+          "nonce" : {
+            "*" : {
+              "from" : "0x1e",
+              "to" : "0x1f"
+            }
+          },
+          "storage" : { }
+        }
+      },
+      "trace" : [ ],
+      "vmTrace" : null
+    },
+    "id" : 24
+  },
+  "statusCode" : 200
+}

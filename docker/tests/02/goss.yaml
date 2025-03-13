@@ -1,0 +1,10 @@
+---
+# runtime docker tests
+file:
+  /var/lib/idn:
+    exists: true
+    owner: idn
+    mode: "0755"
+process:
+  java:
+    running: true

@@ -1,0 +1,23 @@
+{
+  "comment" : "Simple value transfer",
+  "request" : {
+    "jsonrpc" : "2.0",
+    "method" : "trace_rawTransaction",
+    "params" : [ "0xf8611781ef83fffff294000000000000000000000000000000000000099901801ca04ecb4fc65c930379a3688b9e34fb450141c141a6f8a651235ec4ddaaa62b0bd4a04d44121854a8747da882d3b66793bc3e8b0129cf6af18d43c4815ba2e3b097ef", [ "vmTrace" ] ],
+    "id" : 106
+  },
+  "response" : {
+    "jsonrpc" : "2.0",
+    "result" : {
+      "output" : "0x",
+      "stateDiff" : null,
+      "trace" : [ ],
+      "vmTrace" : {
+        "code" : "0x",
+        "ops" : [ ]
+      }
+    },
+    "id" : 106
+  },
+  "statusCode" : 200
+}

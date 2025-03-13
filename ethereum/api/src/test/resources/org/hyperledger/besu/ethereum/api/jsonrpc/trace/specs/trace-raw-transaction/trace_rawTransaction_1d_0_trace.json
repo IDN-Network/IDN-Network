@@ -1,0 +1,31 @@
+{
+  "comment" : "Stack underflow during contract creation",
+  "request" : {
+    "jsonrpc" : "2.0",
+    "method" : "trace_rawTransaction",
+    "params" : [ "0xf84f1e01830119408080836000f11ca09b03e5c59d31ee87dc81426da4132cf096e9b996b9943a87896ddf5f41842b97a069f9c0608c8b002e8f91480ff70f6b74f014ac8d29d932db6479fb6213f5c660", [ "trace" ] ],
+    "id" : 101
+  },
+  "response" : {
+    "jsonrpc" : "2.0",
+    "result" : {
+      "output" : "0x",
+      "stateDiff" : null,
+      "trace" : [ {
+        "action" : {
+          "from" : "0xfe3b557e8fb62b89f4916b721be55ceb828dbd73",
+          "gas" : "0x4a14",
+          "init" : "0x6000f1",
+          "value" : "0x0"
+        },
+        "error" : "Stack underflow",
+        "subtraces" : 0,
+        "traceAddress" : [ ],
+        "type" : "create"
+      } ],
+      "vmTrace" : null
+    },
+    "id" : 101
+  },
+  "statusCode" : 200
+}

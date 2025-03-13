@@ -1,0 +1,59 @@
+{
+  "comment" : "Call to a contract creation that fails with a depth of 1",
+  "request" : {
+    "jsonrpc" : "2.0",
+    "method" : "trace_rawTransaction",
+    "params" : [ "0xf8801e1083011fa194018000000000000000000000000000000000000080a0000000000000000000000000000000000000000000000000000000000000ea601ca0d7b87be2e1723dd94e01493f6e9fdaae3fd55197be795f6acedadfe557f41c01a06417820e640ee8f2eaa95b84416d9ab94baca74d02c1386ba36364fcf81fee2f", [ "stateDiff" ] ],
+    "id" : 51
+  },
+  "response" : {
+    "jsonrpc" : "2.0",
+    "result" : {
+      "output" : "0x",
+      "stateDiff" : {
+        "0x0000000000000000000000000000000000000000" : {
+          "balance" : {
+            "*" : {
+              "from" : "0x393f0f18385c0b29e",
+              "to" : "0x393f0f18385d298be"
+            }
+          },
+          "code" : "=",
+          "nonce" : "=",
+          "storage" : { }
+        },
+        "0x0180000000000000000000000000000000000000" : {
+          "balance" : "=",
+          "code" : "=",
+          "nonce" : {
+            "*" : {
+              "from" : "0x1",
+              "to" : "0x2"
+            }
+          },
+          "storage" : { }
+        },
+        "0xfe3b557e8fb62b89f4916b721be55ceb828dbd73" : {
+          "balance" : {
+            "*" : {
+              "from" : "0xffffffffffffffffffffffffffffffffd27fb671b",
+              "to" : "0xffffffffffffffffffffffffffffffffd27e980fb"
+            }
+          },
+          "code" : "=",
+          "nonce" : {
+            "*" : {
+              "from" : "0x1e",
+              "to" : "0x1f"
+            }
+          },
+          "storage" : { }
+        }
+      },
+      "trace" : [ ],
+      "vmTrace" : null
+    },
+    "id" : 51
+  },
+  "statusCode" : 200
+}

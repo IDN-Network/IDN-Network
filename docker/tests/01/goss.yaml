@@ -1,0 +1,27 @@
+---
+# runtime docker tests
+file:
+  /opt/idn/bin/idn:
+    exists: true
+    mode: "0755"
+    owner: idn
+    group: idn
+    filetype: file
+    contains: []
+  /opt/idn/database:
+    exists: true
+    mode: "0755"
+    owner: idn
+    group: idn
+    filetype: directory
+    contains: []
+  /opt/idn/key:
+    exists: true
+    mode: "0600"
+    owner: idn
+    group: idn
+    filetype: file
+    contains: []
+process:
+  java:
+    running: true

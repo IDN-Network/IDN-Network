@@ -1,0 +1,120 @@
+[
+  {
+    "name": "com.github.benmanes.caffeine.cache.PSMW",
+    "allDeclaredConstructors": true
+  },
+  {
+    "name": "com.github.benmanes.caffeine.cache.PSW",
+    "allDeclaredConstructors": true
+  },
+  {
+    "name": "com.github.benmanes.caffeine.cache.PSWMS",
+    "allDeclaredConstructors": true
+  },
+  {
+    "name": "com.github.benmanes.caffeine.cache.SSLA",
+    "allDeclaredConstructors": true
+  },
+  {
+    "name": "com.github.benmanes.caffeine.cache.SSLMSW",
+    "allDeclaredConstructors": true
+  },
+  {
+    "name": "com.github.benmanes.caffeine.cache.SSMSW",
+    "allDeclaredConstructors": true
+  },
+  {
+    "name": "com.github.benmanes.caffeine.cache.SSMW",
+    "allDeclaredConstructors": true
+  },
+  {
+    "name": "org.bouncycastle.jcajce.provider.asymmetric.ec.KeyFactorySpi",
+    "allDeclaredConstructors": true,
+    "allPublicMethods": true
+  },
+  {
+    "name": "org.bouncycastle.jcajce.provider.asymmetric.ec.KeyFactorySpi$ECDSA",
+    "allDeclaredConstructors": true,
+    "allPublicMethods": true
+  },
+  {
+    "name": "org.bouncycastle.jcajce.provider.asymmetric.ec.KeyPairGeneratorSpi",
+    "allDeclaredConstructors": true,
+    "allPublicMethods": true
+  },
+  {
+    "name": "org.bouncycastle.jcajce.provider.asymmetric.ec.KeyPairGeneratorSpi$ECDSA",
+    "allDeclaredConstructors": true,
+    "allPublicMethods": true
+  },
+  {
+    "name": "org.bouncycastle.jcajce.provider.digest.Keccak$Mappings",
+    "allDeclaredConstructors": true,
+    "allPublicMethods": true
+  },
+  {
+    "name": "org.bouncycastle.jcajce.provider.digest.Keccak$Digest256",
+    "allDeclaredConstructors": true,
+    "allPublicMethods": true
+  },
+  {
+    "name": "org.bouncycastle.jcajce.provider.digest.Keccak",
+    "allDeclaredConstructors": true,
+    "allPublicMethods": true
+  },
+  {
+    "name": "org.idnecology.idn.ethereum.referencetests.ReferenceTestEnv",
+    "queryAllPublicConstructors": true,
+    "queryAllPublicMethods": true,
+    "allDeclaredConstructors": true,
+    "allPublicMethods": true
+  },
+  {
+    "name": "org.idnecology.idn.ethereum.referencetests.ReferenceTestEnv$EnvWithdrawal",
+    "queryAllPublicConstructors": true,
+    "queryAllPublicMethods": true,
+    "allDeclaredConstructors": true,
+    "allPublicMethods": true
+  },
+  {
+    "name": "org.idnecology.idn.ethereum.referencetests.ReferenceTestWorldState",
+    "queryAllPublicConstructors": true,
+    "queryAllPublicMethods": true,
+    "allDeclaredConstructors": true,
+    "allPublicMethods": true
+  },
+  {
+    "name": "org.idnecology.idn.ethereum.referencetests.ReferenceTestWorldState$AccountMock",
+    "queryAllPublicConstructors": true,
+    "queryAllPublicMethods": true,
+    "allDeclaredConstructors": true,
+    "allPublicMethods": true
+  },
+  {
+    "name": "org.idnecology.idn.ethereum.referencetests.BlockchainReferenceTestCaseSpec$ReferenceTestBlockHeader",
+    "queryAllPublicConstructors": true,
+    "queryAllPublicMethods": true,
+    "allDeclaredConstructors": true,
+    "allPublicMethods": true
+  },
+  {
+    "name": "org.idnecology.idn.evm.internal.ReturnStack$ReturnStackItem[]",
+    "unsafeAllocated": true
+  },
+  {
+    "name": "org.idnecology.idn.evmtool.T8nExecutor$RejectedTransaction",
+    "queryAllPublicConstructors": true,
+    "queryAllPublicMethods": true,
+    "allDeclaredConstructors": true,
+    "allPublicMethods": true
+  },
+  {
+    "name": "org.idnecology.idn.evm.log.Log",
+    "allDeclaredConstructors": true,
+    "allPublicConstructors": true,
+    "allDeclaredMethods": true,
+    "allPublicMethods": true,
+    "allDeclaredFields": true,
+    "allPublicFields": true
+  }
+]

@@ -1,0 +1,106 @@
+{
+  "comment" : "Log output with LOG2.",
+  "request" : {
+    "jsonrpc" : "2.0",
+    "method" : "trace_rawTransaction",
+    "params" : [ "0xf8611e81ef83fffff29400b000000000000000000000000000000000000080801ba0861a10257f56944e4c7c3316590b588f357fd99c89282f774b41d108322c3956a01e896fc32a14c17477bb9301b450e1412516b2e9309a69a51c64fe46db13a73b", [ "vmTrace" ] ],
+    "id" : 124
+  },
+  "response" : {
+    "jsonrpc" : "2.0",
+    "result" : {
+      "output" : "0x",
+      "stateDiff" : null,
+      "trace" : [ ],
+      "vmTrace" : {
+        "code" : "0x608b60045360aa60ff60016004a2",
+        "ops" : [ {
+          "cost" : 3,
+          "ex" : {
+            "mem" : null,
+            "push" : [ "0x8b" ],
+            "store" : null,
+            "used" : 16756199
+          },
+          "pc" : 0,
+          "sub" : null
+        }, {
+          "cost" : 3,
+          "ex" : {
+            "mem" : null,
+            "push" : [ "0x4" ],
+            "store" : null,
+            "used" : 16756196
+          },
+          "pc" : 2,
+          "sub" : null
+        }, {
+          "cost" : 6,
+          "ex" : {
+            "mem" : {
+              "data" : "0x8b",
+              "off" : 4
+            },
+            "push" : [ ],
+            "store" : null,
+            "used" : 16756190
+          },
+          "pc" : 4,
+          "sub" : null
+        }, {
+          "cost" : 3,
+          "ex" : {
+            "mem" : null,
+            "push" : [ "0xaa" ],
+            "store" : null,
+            "used" : 16756187
+          },
+          "pc" : 5,
+          "sub" : null
+        }, {
+          "cost" : 3,
+          "ex" : {
+            "mem" : null,
+            "push" : [ "0xff" ],
+            "store" : null,
+            "used" : 16756184
+          },
+          "pc" : 7,
+          "sub" : null
+        }, {
+          "cost" : 3,
+          "ex" : {
+            "mem" : null,
+            "push" : [ "0x1" ],
+            "store" : null,
+            "used" : 16756181
+          },
+          "pc" : 9,
+          "sub" : null
+        }, {
+          "cost" : 3,
+          "ex" : {
+            "mem" : null,
+            "push" : [ "0x4" ],
+            "store" : null,
+            "used" : 16756178
+          },
+          "pc" : 11,
+          "sub" : null
+        }, {
+          "cost" : 1133,
+          "ex" : {
+            "mem" : null,
+            "push" : [ ],
+            "store" : null,
+            "used" : 16755045
+          },
+          "pc" : 13,
+          "sub" : null
+        } ]
+      }
+    },
+    "id" : 124
+  },
+  "statusCode" : 200
+}

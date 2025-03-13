@@ -1,0 +1,117 @@
+/*
+ * Copyright contributors to Idn.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except in compliance with
+ * the License. You may obtain a copy of the License at
+ *
+ * http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on
+ * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License for the
+ * specific language governing permissions and limitations under the License.
+ *
+ * SPDX-License-Identifier: Apache-2.0
+ */
+package org.idnecology.idn.tests.acceptance.bft;
+
+import org.idnecology.idn.datatypes.Wei;
+import org.idnecology.idn.ethereum.core.AddressHelpers;
+import org.idnecology.idn.ethereum.core.ImmutableMiningConfiguration;
+import org.idnecology.idn.ethereum.core.ImmutableMiningConfiguration.MutableInitValues;
+import org.idnecology.idn.ethereum.core.MiningConfiguration;
+import org.idnecology.idn.tests.acceptance.dsl.account.Account;
+import org.idnecology.idn.tests.acceptance.dsl.blockchain.Amount;
+import org.idnecology.idn.tests.acceptance.dsl.node.IdnNode;
+
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.MethodSource;
+
+public class BftMiningAcceptanceTest_Part1 extends ParameterizedBftTestBase {
+
+  @ParameterizedTest(name = "{index}: {0}")
+  @MethodSource("factoryFunctions")
+  public void shouldMineOnSingleNodeWithPaidGas_Berlin(
+      final String testName, final BftAcceptanceTestParameterization nodeFactory) throws Exception {
+    setUp(testName, nodeFactory);
+    final IdnNode minerNode = nodeFactory.createNode(idn, "miner1");
+    cluster.start(minerNode);
+
+    cluster.verify(blockchain.reachesHeight(minerNode, 1));
+
+    final Account sender = accounts.createAccount("account1");
+    final Account receiver = accounts.createAccount("account2");
+
+    minerNode.execute(accountTransactions.createTransfer(sender, 50));
+    cluster.verify(sender.balanceEquals(50));
+
+    minerNode.execute(accountTransactions.createIncrementalTransfers(sender, receiver, 1));
+    cluster.verify(receiver.balanceEquals(1));
+
+    minerNode.execute(accountTransactions.createIncrementalTransfers(sender, receiver, 2));
+    cluster.verify(receiver.balanceEquals(3));
+  }
+
+  @ParameterizedTest(name = "{index}: {0}")
+  @MethodSource("factoryFunctions")
+  public void shouldMineOnSingleNodeWithFreeGas_Berlin(
+      final String testName, final BftAcceptanceTestParameterization nodeFactory) throws Exception {
+    setUp(testName, nodeFactory);
+    final IdnNode minerNode = nodeFactory.createNode(idn, "miner1");
+    final MiningConfiguration zeroGasMiningParams =
+        ImmutableMiningConfiguration.builder()
+            .mutableInitValues(
+                MutableInitValues.builder()
+                    .isMiningEnabled(true)
+                    .minTransactionGasPrice(Wei.ZERO)
+                    .coinbase(AddressHelpers.ofValue(1))
+                    .build())
+            .build();
+    minerNode.setMiningParameters(zeroGasMiningParams);
+
+    cluster.start(minerNode);
+
+    cluster.verify(blockchain.reachesHeight(minerNode, 1));
+
+    final Account sender = accounts.createAccount("account1");
+    final Account receiver = accounts.createAccount("account2");
+
+    minerNode.execute(accountTransactions.createTransfer(sender, 50, Amount.ZERO));
+    cluster.verify(sender.balanceEquals(50));
+
+    minerNode.execute(
+        accountTransactions.createIncrementalTransfers(sender, receiver, 1, Amount.ZERO));
+    cluster.verify(receiver.balanceEquals(1));
+
+    minerNode.execute(
+        accountTransactions.createIncrementalTransfers(sender, receiver, 2, Amount.ZERO));
+    cluster.verify(receiver.balanceEquals(3));
+  }
+
+  @ParameterizedTest(name = "{index}: {0}")
+  @MethodSource("factoryFunctions")
+  public void shouldMineOnSingleNodeWithPaidGas_London(
+      final String testName, final BftAcceptanceTestParameterization nodeFactory) throws Exception {
+    setUp(testName, nodeFactory);
+    final IdnNode minerNode = nodeFactory.createNode(idn, "miner1");
+    updateGenesisConfigToLondon(minerNode, false);
+
+    cluster.start(minerNode);
+
+    cluster.verify(blockchain.reachesHeight(minerNode, 1));
+
+    final Account sender = accounts.createAccount("account1");
+    final Account receiver = accounts.createAccount("account2");
+
+    minerNode.execute(accountTransactions.createTransfer(sender, 50));
+    cluster.verify(sender.balanceEquals(50));
+
+    minerNode.execute(accountTransactions.create1559Transfer(sender, 50, 4));
+    cluster.verify(sender.balanceEquals(100));
+
+    minerNode.execute(accountTransactions.createIncrementalTransfers(sender, receiver, 1));
+    cluster.verify(receiver.balanceEquals(1));
+
+    minerNode.execute(accountTransactions.create1559IncrementalTransfers(sender, receiver, 2, 4));
+    cluster.verify(receiver.balanceEquals(3));
+  }
+}

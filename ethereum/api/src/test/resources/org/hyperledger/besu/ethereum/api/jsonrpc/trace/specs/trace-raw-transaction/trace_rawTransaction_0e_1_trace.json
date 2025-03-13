@@ -1,0 +1,36 @@
+{
+  "comment" : "Increments contract storage 0 by 1",
+  "request" : {
+    "jsonrpc" : "2.0",
+    "method" : "trace_rawTransaction",
+    "params" : [ "0xf8611e81ef83fffff294009000000000000000000000000000000000000080801ba06d4cf2dbd66884ca1256f3ca5e78a43ab9a0a641c4d0a920237d2533e791eccfa05b100df1d529a311d3222e2b05be800f60d4b0dc869236731406d40d17348489", [ "trace" ] ],
+    "id" : 68
+  },
+  "response" : {
+    "jsonrpc" : "2.0",
+    "result" : {
+      "output" : "0x04",
+      "stateDiff" : null,
+      "trace" : [ {
+        "action" : {
+          "callType" : "call",
+          "from" : "0xfe3b557e8fb62b89f4916b721be55ceb828dbd73",
+          "gas" : "0xffadea",
+          "input" : "0x",
+          "to" : "0x0090000000000000000000000000000000000000",
+          "value" : "0x0"
+        },
+        "result" : {
+          "gasUsed" : "0x16c6",
+          "output" : "0x04"
+        },
+        "subtraces" : 0,
+        "traceAddress" : [ ],
+        "type" : "call"
+      } ],
+      "vmTrace" : null
+    },
+    "id" : 68
+  },
+  "statusCode" : 200
+}

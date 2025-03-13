@@ -1,0 +1,33 @@
+{
+  "comment" : "Call to a contract creation that fails with a stack underflow",
+  "request" : {
+    "jsonrpc" : "2.0",
+    "method" : "trace_rawTransaction",
+    "params" : [ "0xf8501e018347b760808084602af3001ca05a48260886c4a9882f04821103730ad4a466f8d8cf878758c109cfb6059d040aa0167e20b5fb0dce99f45ce1e3a56cd6696deee8495ed7a84145a0ff205d9ef6cc", [ "vmTrace" ] ],
+    "id" : 158
+  },
+  "response" : {
+    "jsonrpc" : "2.0",
+    "result" : {
+      "output" : "0x",
+      "stateDiff" : null,
+      "trace" : [ ],
+      "vmTrace" : {
+        "code" : "0x602af300",
+        "ops" : [ {
+          "cost" : 3,
+          "ex" : {
+            "mem" : null,
+            "push" : [ "0x2a" ],
+            "store" : null,
+            "used" : 4646945
+          },
+          "pc" : 0,
+          "sub" : null
+        } ]
+      }
+    },
+    "id" : 158
+  },
+  "statusCode" : 200
+}

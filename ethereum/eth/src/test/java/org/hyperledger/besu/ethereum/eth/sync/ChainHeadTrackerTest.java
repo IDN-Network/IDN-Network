@@ -1,0 +1,225 @@
+/*
+ * Copyright ConsenSys AG.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except in compliance with
+ * the License. You may obtain a copy of the License at
+ *
+ * http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on
+ * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License for the
+ * specific language governing permissions and limitations under the License.
+ *
+ * SPDX-License-Identifier: Apache-2.0
+ */
+package org.idnecology.idn.ethereum.eth.sync;
+
+import static org.assertj.core.api.Assertions.assertThat;
+
+import org.idnecology.idn.config.GenesisConfig;
+import org.idnecology.idn.datatypes.Hash;
+import org.idnecology.idn.ethereum.chain.BadBlockManager;
+import org.idnecology.idn.ethereum.chain.MutableBlockchain;
+import org.idnecology.idn.ethereum.core.BlockchainSetupUtil;
+import org.idnecology.idn.ethereum.core.Difficulty;
+import org.idnecology.idn.ethereum.core.MiningConfiguration;
+import org.idnecology.idn.ethereum.difficulty.fixed.FixedDifficultyProtocolSchedule;
+import org.idnecology.idn.ethereum.eth.manager.ChainState;
+import org.idnecology.idn.ethereum.eth.manager.EthPeer;
+import org.idnecology.idn.ethereum.eth.manager.EthProtocolManager;
+import org.idnecology.idn.ethereum.eth.manager.EthProtocolManagerTestBuilder;
+import org.idnecology.idn.ethereum.eth.manager.RespondingEthPeer;
+import org.idnecology.idn.ethereum.eth.manager.RespondingEthPeer.Responder;
+import org.idnecology.idn.ethereum.eth.manager.peertask.PeerTaskExecutor;
+import org.idnecology.idn.ethereum.eth.manager.peertask.task.GetHeadersFromPeerTask;
+import org.idnecology.idn.ethereum.eth.manager.peertask.task.GetHeadersFromPeerTaskExecutorAnswer;
+import org.idnecology.idn.ethereum.mainnet.ProtocolSchedule;
+import org.idnecology.idn.evm.internal.EvmConfiguration;
+import org.idnecology.idn.metrics.noop.NoOpMetricsSystem;
+import org.idnecology.idn.plugin.services.storage.DataStorageFormat;
+
+import java.util.stream.Stream;
+
+import org.assertj.core.api.Assertions;
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtensionContext;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.Arguments;
+import org.junit.jupiter.params.provider.ArgumentsProvider;
+import org.junit.jupiter.params.provider.ArgumentsSource;
+import org.mockito.Mockito;
+
+public class ChainHeadTrackerTest {
+
+  private BlockchainSetupUtil blockchainSetupUtil;
+  private MutableBlockchain blockchain;
+  private EthProtocolManager ethProtocolManager;
+  private RespondingEthPeer respondingPeer;
+
+  private PeerTaskExecutor peerTaskExecutor;
+  private SynchronizerConfiguration synchronizerConfiguration;
+
+  private ChainHeadTracker chainHeadTracker;
+
+  private final ProtocolSchedule protocolSchedule =
+      FixedDifficultyProtocolSchedule.create(
+          GenesisConfig.fromResource("/dev.json").getConfigOptions(),
+          false,
+          EvmConfiguration.DEFAULT,
+          MiningConfiguration.MINING_DISABLED,
+          new BadBlockManager(),
+          false,
+          new NoOpMetricsSystem());
+
+  static class ChainHeadTrackerTestArguments implements ArgumentsProvider {
+    @Override
+    public Stream<? extends Arguments> provideArguments(final ExtensionContext context) {
+      return Stream.of(
+          Arguments.of(DataStorageFormat.BONSAI), Arguments.of(DataStorageFormat.FOREST));
+    }
+  }
+
+  public void setup(final DataStorageFormat storageFormat, final boolean isPeerTaskSystemEnabled) {
+    blockchainSetupUtil = BlockchainSetupUtil.forTesting(storageFormat);
+    blockchain = blockchainSetupUtil.getBlockchain();
+    peerTaskExecutor = Mockito.mock(PeerTaskExecutor.class);
+    ethProtocolManager =
+        EthProtocolManagerTestBuilder.builder()
+            .setBlockchain(blockchain)
+            .setPeerTaskExecutor(peerTaskExecutor)
+            .build();
+    respondingPeer =
+        RespondingEthPeer.builder()
+            .ethProtocolManager(ethProtocolManager)
+            .chainHeadHash(blockchain.getChainHeadHash())
+            .totalDifficulty(blockchain.getChainHead().getTotalDifficulty())
+            .estimatedHeight(0)
+            .build();
+    GetHeadersFromPeerTaskExecutorAnswer getHeadersAnswer =
+        new GetHeadersFromPeerTaskExecutorAnswer(
+            blockchain, ethProtocolManager.ethContext().getEthPeers());
+    Mockito.when(peerTaskExecutor.execute(Mockito.any(GetHeadersFromPeerTask.class)))
+        .thenAnswer(getHeadersAnswer);
+    Mockito.when(
+            peerTaskExecutor.executeAgainstPeer(
+                Mockito.any(GetHeadersFromPeerTask.class), Mockito.any(EthPeer.class)))
+        .thenAnswer(getHeadersAnswer);
+    synchronizerConfiguration =
+        SynchronizerConfiguration.builder()
+            .isPeerTaskSystemEnabled(isPeerTaskSystemEnabled)
+            .build();
+    chainHeadTracker =
+        new ChainHeadTracker(
+            ethProtocolManager.ethContext(),
+            protocolSchedule,
+            synchronizerConfiguration,
+            new NoOpMetricsSystem());
+  }
+
+  @ParameterizedTest
+  @ArgumentsSource(ChainHeadTrackerTestArguments.class)
+  public void shouldRequestHeaderChainHeadWhenNewPeerConnects(
+      final DataStorageFormat storageFormat) {
+    setup(storageFormat, false);
+    final Responder responder =
+        RespondingEthPeer.blockchainResponder(
+            blockchainSetupUtil.getBlockchain(),
+            blockchainSetupUtil.getWorldArchive(),
+            blockchainSetupUtil.getTransactionPool());
+    chainHeadTracker.getBestHeaderFromPeer(respondingPeer.getEthPeer());
+
+    Assertions.assertThat(chainHeadState().getEstimatedHeight()).isZero();
+
+    respondingPeer.respond(responder);
+
+    Assertions.assertThat(chainHeadState().getEstimatedHeight())
+        .isEqualTo(blockchain.getChainHeadBlockNumber());
+  }
+
+  @ParameterizedTest
+  @ArgumentsSource(ChainHeadTrackerTestArguments.class)
+  public void shouldRequestHeaderChainHeadWhenNewPeerConnectsUsingPeerTaskSystem(
+      final DataStorageFormat storageFormat) {
+    setup(storageFormat, true);
+    chainHeadTracker.getBestHeaderFromPeer(respondingPeer.getEthPeer());
+
+    Assertions.assertThat(chainHeadState().getEstimatedHeight()).isZero();
+    Assertions.assertThat(chainHeadState().getEstimatedHeight())
+        .isEqualTo(blockchain.getChainHeadBlockNumber());
+  }
+
+  @ParameterizedTest
+  @ArgumentsSource(ChainHeadTrackerTestArguments.class)
+  public void shouldIgnoreHeadersIfChainHeadHasAlreadyBeenUpdatedWhileWaiting(
+      final DataStorageFormat storageFormat) {
+    setup(storageFormat, false);
+    final Responder responder =
+        RespondingEthPeer.blockchainResponder(
+            blockchainSetupUtil.getBlockchain(),
+            blockchainSetupUtil.getWorldArchive(),
+            blockchainSetupUtil.getTransactionPool());
+    chainHeadTracker.getBestHeaderFromPeer(respondingPeer.getEthPeer());
+
+    // Change the hash of the current known head
+    respondingPeer.getEthPeer().chainState().statusReceived(Hash.EMPTY_TRIE_HASH, Difficulty.ONE);
+
+    respondingPeer.respond(responder);
+
+    Assertions.assertThat(chainHeadState().getEstimatedHeight()).isZero();
+  }
+
+  @ParameterizedTest
+  @ArgumentsSource(ChainHeadTrackerTestArguments.class)
+  public void shouldIgnoreHeadersIfChainHeadHasAlreadyBeenUpdatedWhileWaitingUsingPeerTaskSystem(
+      final DataStorageFormat storageFormat) {
+    setup(storageFormat, true);
+    chainHeadTracker.getBestHeaderFromPeer(respondingPeer.getEthPeer());
+
+    // Change the hash of the current known head
+    respondingPeer.getEthPeer().chainState().statusReceived(Hash.EMPTY_TRIE_HASH, Difficulty.ONE);
+
+    Assertions.assertThat(chainHeadState().getEstimatedHeight()).isZero();
+  }
+
+  @ParameterizedTest
+  @ArgumentsSource(ChainHeadTrackerTestArguments.class)
+  public void shouldCheckTrialingPeerLimits(final DataStorageFormat storageFormat) {
+    setup(storageFormat, false);
+    final Responder responder =
+        RespondingEthPeer.blockchainResponder(
+            blockchainSetupUtil.getBlockchain(),
+            blockchainSetupUtil.getWorldArchive(),
+            blockchainSetupUtil.getTransactionPool());
+    chainHeadTracker.getBestHeaderFromPeer(respondingPeer.getEthPeer());
+
+    Assertions.assertThat(chainHeadState().getEstimatedHeight()).isZero();
+
+    respondingPeer.respond(responder);
+
+    Assertions.assertThat(chainHeadState().getEstimatedHeight())
+        .isEqualTo(blockchain.getChainHeadBlockNumber());
+  }
+
+  @ParameterizedTest
+  @ArgumentsSource(ChainHeadTrackerTestArguments.class)
+  public void shouldCheckTrialingPeerLimitsUsingPeerTaskSystem(
+      final DataStorageFormat storageFormat) {
+    setup(storageFormat, true);
+    chainHeadTracker.getBestHeaderFromPeer(respondingPeer.getEthPeer());
+
+    Assertions.assertThat(chainHeadState().getEstimatedHeight()).isZero();
+    Assertions.assertThat(chainHeadState().getEstimatedHeight())
+        .isEqualTo(blockchain.getChainHeadBlockNumber());
+  }
+
+  private ChainState chainHeadState() {
+    return respondingPeer.getEthPeer().chainState();
+  }
+
+  @Test
+  void dryRunDetector() {
+    assertThat(true)
+        .withFailMessage("This test is here so gradle --dry-run executes this class")
+        .isTrue();
+  }
+}

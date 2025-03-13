@@ -1,0 +1,48 @@
+{
+  "comment" : "call the prior contract then delegatecall log contract 00a0..00.",
+  "request" : {
+    "jsonrpc" : "2.0",
+    "method" : "trace_rawTransaction",
+    "params" : [ "0xf88c1781ef83fffff28080b83e600060006000600073fb88de099e13c3ed21f80a7a1e49f8caecf10df65af460006000600060007300a00000000000000000000000000000000000005af41ba09af2949d28bd8df6102c1081c596a9b7aded47547af99084457bf81b85e8cb53a00a04af6c465acbc68e0e7b22f2c3b9051706fbde137155d10a8c61320b8e025c", [ "stateDiff" ] ],
+    "id" : 30
+  },
+  "response" : {
+    "jsonrpc" : "2.0",
+    "result" : {
+      "output" : "0x",
+      "stateDiff" : {
+        "0x0000000000000000000000000000000000000000" : {
+          "balance" : {
+            "*" : {
+              "from" : "0x393f0f18385c0b29e",
+              "to" : "0x393f0f18386473817"
+            }
+          },
+          "code" : "=",
+          "nonce" : "=",
+          "storage" : { }
+        },
+        "0x627306090abab3a6e1400e9345bc60c78a8bef57" : {
+          "balance" : {
+            "*" : {
+              "from" : "0xefffffffffffe28d07a0be63b",
+              "to" : "0xefffffffffffe28d0798560c2"
+            }
+          },
+          "code" : "=",
+          "nonce" : {
+            "*" : {
+              "from" : "0x17",
+              "to" : "0x18"
+            }
+          },
+          "storage" : { }
+        }
+      },
+      "trace" : [ ],
+      "vmTrace" : null
+    },
+    "id" : 30
+  },
+  "statusCode" : 200
+}

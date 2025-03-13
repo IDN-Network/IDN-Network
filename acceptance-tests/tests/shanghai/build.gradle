@@ -1,0 +1,21 @@
+
+plugins {
+  id 'org.web3j' version '4.12.2'
+  id 'org.web3j.solidity' version '0.5.2'
+}
+
+jar { enabled = true }
+
+web3j {
+  generatedPackageName = 'org.idnecology.idn.tests.web3j.generated'
+}
+
+sourceSets.main.solidity.srcDirs = [
+  "$projectDir/shanghaicontracts"
+]
+
+solidity {
+  resolvePackages = false
+  version '0.8.25'
+  evmVersion 'shanghai'
+}

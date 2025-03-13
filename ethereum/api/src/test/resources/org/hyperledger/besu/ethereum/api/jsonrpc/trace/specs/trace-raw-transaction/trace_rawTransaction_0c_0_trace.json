@@ -1,0 +1,36 @@
+{
+  "comment" : "Sequential memory modifications with MSTORE8.",
+  "request" : {
+    "jsonrpc" : "2.0",
+    "method" : "trace_rawTransaction",
+    "params" : [ "0xf8611e81ef83fffff294007000000000000000000000000000000000000080801ba05e1c758b2c37564fa59fe73a387935856da257506d7dff36e887cca222af922fa0185e3626c32a3a6cd609924bf5b32207cb8cdb5e9b5af003dc24ab71b5f25e33", [ "trace" ] ],
+    "id" : 65
+  },
+  "response" : {
+    "jsonrpc" : "2.0",
+    "result" : {
+      "output" : "0x",
+      "stateDiff" : null,
+      "trace" : [ {
+        "action" : {
+          "callType" : "call",
+          "from" : "0xfe3b557e8fb62b89f4916b721be55ceb828dbd73",
+          "gas" : "0xffadea",
+          "input" : "0x",
+          "to" : "0x0070000000000000000000000000000000000000",
+          "value" : "0x0"
+        },
+        "result" : {
+          "gasUsed" : "0x1e",
+          "output" : "0x"
+        },
+        "subtraces" : 0,
+        "traceAddress" : [ ],
+        "type" : "call"
+      } ],
+      "vmTrace" : null
+    },
+    "id" : 65
+  },
+  "statusCode" : 200
+}

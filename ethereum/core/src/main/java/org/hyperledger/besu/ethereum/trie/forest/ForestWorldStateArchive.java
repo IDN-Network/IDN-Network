@@ -1,0 +1,127 @@
+/*
+ * Copyright contributors to Hyperledger Idn.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except in compliance with
+ * the License. You may obtain a copy of the License at
+ *
+ * http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on
+ * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License for the
+ * specific language governing permissions and limitations under the License.
+ *
+ * SPDX-License-Identifier: Apache-2.0
+ */
+package org.idnecology.idn.ethereum.trie.forest;
+
+import org.idnecology.idn.datatypes.Address;
+import org.idnecology.idn.datatypes.Hash;
+import org.idnecology.idn.ethereum.core.BlockHeader;
+import org.idnecology.idn.ethereum.core.MutableWorldState;
+import org.idnecology.idn.ethereum.proof.WorldStateProof;
+import org.idnecology.idn.ethereum.proof.WorldStateProofProvider;
+import org.idnecology.idn.ethereum.trie.MerkleTrie;
+import org.idnecology.idn.ethereum.trie.diffbased.common.provider.WorldStateQueryParams;
+import org.idnecology.idn.ethereum.trie.forest.storage.ForestWorldStateKeyValueStorage;
+import org.idnecology.idn.ethereum.trie.forest.worldview.ForestMutableWorldState;
+import org.idnecology.idn.ethereum.worldstate.WorldStateArchive;
+import org.idnecology.idn.ethereum.worldstate.WorldStatePreimageStorage;
+import org.idnecology.idn.ethereum.worldstate.WorldStateStorageCoordinator;
+import org.idnecology.idn.evm.internal.EvmConfiguration;
+import org.idnecology.idn.evm.worldstate.WorldState;
+
+import java.util.List;
+import java.util.Optional;
+import java.util.function.Function;
+
+import org.apache.tuweni.bytes.Bytes;
+import org.apache.tuweni.units.bigints.UInt256;
+
+public class ForestWorldStateArchive implements WorldStateArchive {
+  private final ForestWorldStateKeyValueStorage worldStateKeyValueStorage;
+  private final WorldStatePreimageStorage preimageStorage;
+  private final WorldStateProofProvider worldStateProof;
+  private final EvmConfiguration evmConfiguration;
+
+  private static final Hash EMPTY_ROOT_HASH = Hash.wrap(MerkleTrie.EMPTY_TRIE_NODE_HASH);
+
+  public ForestWorldStateArchive(
+      final WorldStateStorageCoordinator worldStateStorageCoordinator,
+      final WorldStatePreimageStorage preimageStorage,
+      final EvmConfiguration evmConfiguration) {
+    this.worldStateKeyValueStorage =
+        worldStateStorageCoordinator.getStrategy(ForestWorldStateKeyValueStorage.class);
+    this.preimageStorage = preimageStorage;
+    this.worldStateProof = new WorldStateProofProvider(worldStateStorageCoordinator);
+    this.evmConfiguration = evmConfiguration;
+  }
+
+  @Override
+  public Optional<WorldState> get(final Hash rootHash, final Hash blockHash) {
+    return getWorldState(rootHash).map(state -> state);
+  }
+
+  @Override
+  public boolean isWorldStateAvailable(final Hash rootHash, final Hash blockHash) {
+    return worldStateKeyValueStorage.isWorldStateAvailable(rootHash);
+  }
+
+  @Override
+  public Optional<MutableWorldState> getWorldState(final WorldStateQueryParams queryParams) {
+    if (queryParams.getStateRoot().isEmpty()) {
+      throw new IllegalArgumentException(
+          "State root cannot be empty. A valid state root is required to retrieve the world state.");
+    }
+    return getWorldState(queryParams.getStateRoot().get());
+  }
+
+  @Override
+  public MutableWorldState getWorldState() {
+    return getWorldState(EMPTY_ROOT_HASH).get();
+  }
+
+  private Optional<MutableWorldState> getWorldState(final Hash rootHash) {
+    if (!worldStateKeyValueStorage.isWorldStateAvailable(rootHash)) {
+      return Optional.empty();
+    }
+    return Optional.of(
+        new ForestMutableWorldState(
+            rootHash, worldStateKeyValueStorage, preimageStorage, evmConfiguration));
+  }
+
+  @Override
+  public void resetArchiveStateTo(final BlockHeader blockHeader) {
+    // ignore for forest
+  }
+
+  @Override
+  public Optional<Bytes> getNodeData(final Hash hash) {
+    // query by location is not supported, only query by content
+    return worldStateKeyValueStorage.getNodeData(hash);
+  }
+
+  public ForestWorldStateKeyValueStorage getWorldStateStorage() {
+    return worldStateKeyValueStorage;
+  }
+
+  @Override
+  public <U> Optional<U> getAccountProof(
+      final BlockHeader blockHeader,
+      final Address accountAddress,
+      final List<UInt256> accountStorageKeys,
+      final Function<Optional<WorldStateProof>, ? extends Optional<U>> mapper) {
+    return mapper.apply(
+        worldStateProof.getAccountProof(
+            blockHeader.getStateRoot(), accountAddress, accountStorageKeys));
+  }
+
+  @Override
+  public void heal(final Optional<Address> maybeAccountToRepair, final Bytes location) {
+    // no heal needed for Forest
+  }
+
+  @Override
+  public void close() {
+    // no op
+  }
+}
