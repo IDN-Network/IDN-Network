@@ -14,26 +14,4 @@ Having the following accounts is necessary for contributing code/issues to Idn.
 ### Guidelines for Non-Code and other Trivial Contributions
 Please keep in mind that we do not accept non-code contributions like fixing comments, typos or some other trivial fixes. Although we appreciate the extra help, managing lots of these small contributions is unfeasible, and puts extra pressure in our continuous delivery systems (running all tests, etc). Feel free to open an issue pointing any of those errors, and we will batch them into a single change.
 
-### Useful contributing links
 
-* [I just have a quick question](https://wiki.idnecology.org/display/BESU/I+just+have+a+quick+question)
-* [How to Contribute]
-* [First contribution workflow](https://wiki.idnecology.org/display/BESU/First+contribution?src=contextnavpagetreemode)
-* [Did you find a bug?](https://wiki.idnecology.org/display/BESU/Reporting+Bugs)
-* [Issues](https://wiki.idnecology.org/display/BESU/Issues)
-* [DCO](https://wiki.idnecology.org/display/BESU/DCO)
-* [Suggesting Enhancements](https://wiki.idnecology.org/display/BESU/Suggesting+Enhancements)
-* [Pull Requests](https://wiki.idnecology.org/display/BESU/Pull+Requests)
-* [Code Reviews](https://wiki.idnecology.org/display/BESU/Code+Reviews)
-
-
-* [Security contributions](https://wiki.idnecology.org/display/BESU/Security)
-
-### Other important information
-
-* [Roadmap](https://wiki.idnecology.org/pages/viewpage.action?pageId=24781786)
-* [Code of Conduct](https://wiki.idnecology.org/display/BESU/Code+of+Conduct)
-* [Governance](https://wiki.idnecology.org/display/BESU/Governance)
-
-[How to Contribute]: https://wiki.idnecology.org/display/BESU/How+to+Contribute
-[Linux Foundation (LF) account]: https://identity.linuxfoundation.org/
