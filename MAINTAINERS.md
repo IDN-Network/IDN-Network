@@ -130,21 +130,5 @@ maintainer to emeritus status is recorded using review approval in the PR making
 Returning to active status from emeritus status uses the same steps as adding a
 new maintainer.
 
-Note that the emeritus maintainer always already has the required significant contributions.
-There is no contribution prescription delay.
 
-## Proposal PR template
 
-```markdown
-I propose to add [maintainer github handle] as a Idn project maintainer.
-
-[maintainer github handle] contributed with many high quality commits:
-
-- [list significant achievements]
-
-Here are [their past contributions on Idn project](https://github.com/idnecology/idn/commits?author=[user github handle]).
-
-Voting ends two weeks from today.
-
-For more information on this process see the Becoming a Maintainer section in the MAINTAINERS.md file.
-```

@@ -3,7 +3,6 @@
 Details on previously identified known issues are provided below. Details on known issues identified 
 in the current release are provided in the [Changelog](CHANGELOG.md).
 
-Known issues are open issues categorized as [Very High or High impact](https://wiki.idnecology.org/display/BESU/Defect+Prioritisation+Policy). 
 
 ## Fast sync when running Idn on cloud providers  
 
@@ -21,12 +20,4 @@ This behaviour has been seen on AWS and Digital Ocean.
 
 Workaround -> On AWS, a full restart of the AWS VM is required to restart the fast sync. 
 
-Fast sync is not currently supported on Digital Ocean. We are investigating options to 
-[add support for fast sync on Digital Ocean](https://github.com/idnecology/idn/issues/591). 
 
-## Privacy users with private transactions created using v1.3.4 or earlier 
-
-A critical issue for privacy users with private transactions created using Idn ecology Idn v1.3.4 
-or earlier has been identified. If you have a network with private transaction created using v1.3.4 
-or earlier, please read the following and take the appropriate steps: 
-https://wiki.idnecology.org/display/BESU/Critical+Issue+for+Privacy+Users 

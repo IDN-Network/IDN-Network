@@ -7,8 +7,7 @@ Welcome to the Idn repository! The following links are a set of guidelines for c
 
 Having the following accounts is necessary for contributing code/issues to Idn.  
 * If you want to contribute code, you can make a [github account here](https://github.com).  
-* If you want to raise an issue, do so [in the issues tab](https://github.com/idnecology/idn/issues).
-* To ask questions or chat with us, join our [Discord](https://discord.com/invite/idnecology)
+* If you want to raise an issue, do so [in the issues tab](https://github.com/IDN_Network/idn/issues).
 * To edit pages in our wiki, you'll need a [Linux Foundation (LF) account].
 
 ### Guidelines for Non-Code and other Trivial Contributions
