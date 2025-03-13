@@ -1,5 +1,5 @@
 /*
- * Copyright contributors to Hyperledger Idn.
+ * Copyright contributors to Idn ecology Idn.
  *
  * Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except in compliance with
  * the License. You may obtain a copy of the License at
@@ -47,7 +47,7 @@ import java.util.function.Function;
 
 import org.junit.jupiter.api.Disabled;
 
-@Disabled("flaky https://github.com/hyperledger/idn/issues/8238")
+@Disabled("flaky https://github.com/idnecology/idn/issues/8238")
 public class LegacyFeeMarketBlockTransactionSelectorTest
     extends AbstractBlockTransactionSelectorTest {
 

@@ -1,5 +1,5 @@
 /*
- * Copyright contributors to Hyperledger Idn.
+ * Copyright contributors to Idn ecology Idn.
  *
  * Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except in compliance with
  * the License. You may obtain a copy of the License at
@@ -40,7 +40,7 @@ import picocli.CommandLine.Command;
     descriptionHeading = "%nDescription:%n%n",
     optionListHeading = "%nOptions:%n",
     footerHeading = "%n",
-    footer = "Hyperledger Idn is licensed under the Apache License 2.0",
+    footer = "Idn ecology Idn is licensed under the Apache License 2.0",
     subcommands = {EofContainerSubCommand.class})
 @SuppressWarnings("java:S106")
 public class IdnFuzzCommand implements Runnable {

@@ -5,7 +5,7 @@ Welcome to the Idn repository! The following links are a set of guidelines for c
 ### Github/Discord/LF Accounts
 
 Having Github, Discord, and Linux Foundation accounts is necessary for obtaining support for Idn through the community channels, wiki and issue management.  
-* If you want to raise an issue, you can do so [on the github issue tab](https://github.com/hyperledger/idn/issues).   
+* If you want to raise an issue, you can do so [on the github issue tab](https://github.com/idnecology/idn/issues).   
 * Discord requires a [Discord account].
 * The Idn wiki also requires a [Linux Foundation (LF) account] in order to edit pages.
 
@@ -13,12 +13,12 @@ Having Github, Discord, and Linux Foundation accounts is necessary for obtaining
 
 * [Idn User Documentation]
 * [Idn channel on Discord]
-* [I just have a quick question](https://wiki.hyperledger.org/display/BESU/I+just+have+a+quick+question)
-* [Did you find a bug?](https://wiki.hyperledger.org/display/BESU/Reporting+Bugs)
-* [Issues](https://wiki.hyperledger.org/display/BESU/Issues)
+* [I just have a quick question](https://wiki.idnecology.org/display/BESU/I+just+have+a+quick+question)
+* [Did you find a bug?](https://wiki.idnecology.org/display/BESU/Reporting+Bugs)
+* [Issues](https://wiki.idnecology.org/display/BESU/Issues)
 * [Contributing Guidelines]
 
 
-[Idn User Documentation]: https://idn.hyperledger.org
-[Idn channel on Discord]: https://discord.com/invite/hyperledger
+[Idn User Documentation]: https://idn.idnecology.org
+[Idn channel on Discord]: https://discord.com/invite/idnecology
 [Contributing Guidelines]: CONTRIBUTING.md

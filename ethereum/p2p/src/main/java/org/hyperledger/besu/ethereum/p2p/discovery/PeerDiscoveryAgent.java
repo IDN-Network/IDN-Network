@@ -314,7 +314,7 @@ public abstract class PeerDiscoveryAgent {
    * specifies 127.0.0.1 (the default if a custom value is not specified with --p2p-host or via a
    * suitable --nat-method) we ignore it in favour of the UDP source address. Some implementations
    * send 127.0.0.1 or 255.255.255.255 anyway, but this reduces the chance of an unexpected change
-   * in behaviour as a result of https://github.com/hyperledger/idn/issues/6224 being fixed.
+   * in behaviour as a result of https://github.com/idnecology/idn/issues/6224 being fixed.
    *
    * @param sourceEndpoint source endpoint of the packet
    * @param packet P2P PING packet

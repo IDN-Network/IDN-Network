@@ -43,8 +43,8 @@ public class EthGraphQLHttpBySpecTest extends AbstractEthGraphQLHttpServiceTest 
   public static Stream<Arguments> specs() throws IOException, URISyntaxException {
     final URL url =
         EthGraphQLHttpBySpecTest.class.getResource(
-            "/org/hyperledger/idn/ethereum/api/graphql/eth_blockNumber.json");
-    checkState(url != null, "Cannot find test directory org/hyperledger/idn/ethereum/api/graphql");
+            "/org/idnecology/idn/ethereum/api/graphql/eth_blockNumber.json");
+    checkState(url != null, "Cannot find test directory org/idnecology/idn/ethereum/api/graphql");
     final Path dir = Paths.get(url.toURI()).getParent();
     return Files.list(dir)
         .map(Path::getFileName)

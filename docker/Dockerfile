@@ -64,9 +64,9 @@ ARG VCS_REF
 LABEL org.label-schema.build-date=$BUILD_DATE \
       org.label-schema.name="Idn" \
       org.label-schema.description="Enterprise Ethereum client" \
-      org.label-schema.url="https://idn.hyperledger.org/" \
+      org.label-schema.url="https://idn.idnecology.org/" \
       org.label-schema.vcs-ref=$VCS_REF \
-      org.label-schema.vcs-url="https://github.com/hyperledger/idn.git" \
-      org.label-schema.vendor="Hyperledger" \
+      org.label-schema.vcs-url="https://github.com/idnecology/idn.git" \
+      org.label-schema.vendor="Idn ecology" \
       org.label-schema.version=$VERSION \
       org.label-schema.schema-version="1.0"

@@ -1,5 +1,5 @@
 /*
- * Copyright contributors to Hyperledger Idn.
+ * Copyright contributors to Idn ecology Idn.
  *
  * Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except in compliance with
  * the License. You may obtain a copy of the License at
@@ -109,7 +109,7 @@ public class TrieLogPruner implements TrieLogEvent.TrieLogObserver {
 
       LOG.atInfo()
           .setMessage(
-              "Trie log pruning will timeout after {} seconds. If this is timing out, consider using `idn storage trie-log prune` subcommand, see https://idn.hyperledger.org/public-networks/how-to/bonsai-limit-trie-logs")
+              "Trie log pruning will timeout after {} seconds. If this is timing out, consider using `idn storage trie-log prune` subcommand, see https://idn.idnecology.org/public-networks/how-to/bonsai-limit-trie-logs")
           .addArgument(timeoutInSeconds)
           .log();
 

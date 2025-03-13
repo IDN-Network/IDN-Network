@@ -1,5 +1,5 @@
 /*
- * Copyright contributors to Hyperledger Idn.
+ * Copyright contributors to Idn ecology Idn.
  *
  * Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except in compliance with
  * the License. You may obtain a copy of the License at
@@ -90,7 +90,7 @@ class AbstractBlockProcessorIntegrationTest {
     final ExecutionContextTestFixture contextTestFixture =
         ExecutionContextTestFixture.builder(
                 GenesisConfig.fromResource(
-                    "/org/hyperledger/idn/ethereum/mainnet/genesis-bp-it.json"))
+                    "/org/idnecology/idn/ethereum/mainnet/genesis-bp-it.json"))
             .dataStorageFormat(DataStorageFormat.BONSAI)
             .build();
     final BlockHeader blockHeader = new BlockHeaderTestFixture().number(0L).buildHeader();
@@ -104,7 +104,7 @@ class AbstractBlockProcessorIntegrationTest {
     final ExecutionContextTestFixture contextTestFixture =
         ExecutionContextTestFixture.builder(
                 GenesisConfig.fromResource(
-                    "/org/hyperledger/idn/ethereum/mainnet/genesis-bp-it.json"))
+                    "/org/idnecology/idn/ethereum/mainnet/genesis-bp-it.json"))
             .dataStorageFormat(DataStorageFormat.BONSAI)
             .build();
     final ProtocolSchedule protocolSchedule = contextTestFixture.getProtocolSchedule();

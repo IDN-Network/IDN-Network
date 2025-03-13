@@ -14,7 +14,7 @@
 
 'use strict';
 
-const { WorkloadModuleBase } = require('@hyperledger/caliper-core');
+const { WorkloadModuleBase } = require('@idnecology/caliper-core');
 const Web3 = require('web3');
 
 class StoreWorkload extends WorkloadModuleBase {

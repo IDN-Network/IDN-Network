@@ -1,5 +1,5 @@
 /*
- * Copyright contributors to Hyperledger Idn.
+ * Copyright contributors to Idn ecology Idn.
  *
  * Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except in compliance with
  * the License. You may obtain a copy of the License at
@@ -19,10 +19,10 @@ import org.idnecology.idn.IdnInfo;
 import picocli.CommandLine;
 
 /**
- * The VersionProvider class is responsible for providing the version of the Hyperledger Idn EVM
+ * The VersionProvider class is responsible for providing the version of the Idn ecology Idn EVM
  * tool. It implements the IVersionProvider interface from the picocli library.
  *
- * <p>The getVersion method returns a string array containing the version of the Hyperledger Idn
+ * <p>The getVersion method returns a string array containing the version of the Idn ecology Idn
  * EVM tool.
  */
 public class VersionProvider implements CommandLine.IVersionProvider {
@@ -36,12 +36,12 @@ public class VersionProvider implements CommandLine.IVersionProvider {
   }
 
   /**
-   * This method returns the version of the Hyperledger Idn EVM tool.
+   * This method returns the version of the Idn ecology Idn EVM tool.
    *
-   * @return A string array containing the version of the Hyperledger Idn EVM tool.
+   * @return A string array containing the version of the Idn ecology Idn EVM tool.
    */
   @Override
   public String[] getVersion() {
-    return new String[] {"Hyperledger Idn evm " + IdnInfo.shortVersion()};
+    return new String[] {"Idn ecology Idn evm " + IdnInfo.shortVersion()};
   }
 }

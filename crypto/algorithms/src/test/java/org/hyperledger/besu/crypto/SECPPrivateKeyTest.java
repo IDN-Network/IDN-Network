@@ -81,7 +81,7 @@ public class SECPPrivateKeyTest {
     final File file =
         new File(
             this.getClass()
-                .getResource("/org/hyperledger/idn/crypto/validPrivateKey.txt")
+                .getResource("/org/idnecology/idn/crypto/validPrivateKey.txt")
                 .toURI());
     final SECPPrivateKey privateKey = KeyPairUtil.loadPrivateKey(file);
     assertThat(privateKey.getEncodedBytes())

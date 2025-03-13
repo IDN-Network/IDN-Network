@@ -1,5 +1,5 @@
 /*
- * Copyright contributors to Hyperledger Idn.
+ * Copyright contributors to Idn ecology Idn.
  *
  * Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except in compliance with
  * the License. You may obtain a copy of the License at
@@ -22,7 +22,7 @@ import org.idnecology.idn.plugin.services.metrics.OperationTimer;
 import java.util.HashMap;
 
 /**
- * This class manages the synchronization duration metrics for the Hyperledger Idn project. It
+ * This class manages the synchronization duration metrics for the Idn ecology Idn project. It
  * provides methods to start and stop timers for various synchronization phases.
  */
 public class SyncDurationMetrics {

@@ -1,5 +1,5 @@
 /*
- * Copyright contributors to Hyperledger Idn.
+ * Copyright contributors to Idn ecology Idn.
  *
  * Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except in compliance with
  * the License. You may obtain a copy of the License at
@@ -247,7 +247,7 @@ public class KeyValueStoragePrefixedKeyBlockchainStorage implements BlockchainSt
     LOG.error(
         "Inconsistency found when migrating {} to variables storage,"
             + " probably this is due to a downgrade done without running the `storage revert-variables`"
-            + " subcommand first, see https://github.com/hyperledger/idn/pull/5471",
+            + " subcommand first, see https://github.com/idnecology/idn/pull/5471",
         key);
     throw new IllegalStateException(
         key + " mismatch: blockchain storage value=" + bch + ", variables storage value=" + vch);

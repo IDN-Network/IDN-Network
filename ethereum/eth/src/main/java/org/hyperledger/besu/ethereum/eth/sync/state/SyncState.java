@@ -84,7 +84,7 @@ public class SyncState {
         });
 
     // Add new peer listener to prevent permissioned PoA network stalling on start-up.
-    // https://github.com/hyperledger/idn/issues/528
+    // https://github.com/idnecology/idn/issues/528
     newPeerListenerId =
         Optional.of(
             ethPeers.subscribeConnect(

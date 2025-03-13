@@ -86,8 +86,8 @@ The following steps must occur for a contributor to be "upgraded" as a maintaine
   - The proposed maintainer accepts the nomination and expresses a willingness
     to be a long-term (more than 6 month) committer by adding a comment in the proposal PR.
   - The PR will be communicated in all appropriate communication channels
-    including at least [idn-contributors channel on Discord](https://discord.com/invite/hyperledger),
-    the [mailing list](https://lists.hyperledger.org/g/idn)
+    including at least [idn-contributors channel on Discord](https://discord.com/invite/idnecology),
+    the [mailing list](https://lists.idnecology.org/g/idn)
     and any maintainer/community call.
 - Approval by at least 3 current maintainers within two weeks of the proposal or
   an absolute majority (half the total + 1) of current maintainers.
@@ -95,7 +95,7 @@ The following steps must occur for a contributor to be "upgraded" as a maintaine
 - No veto raised by another maintainer within the voting timeframe.
   - All vetoes must be accompanied by a public explanation as a comment in the
     proposal PR.
-  - The explanation of the veto must be reasonable and follow the [Idn code of conduct](https://wiki.hyperledger.org/display/BESU/Code+of+Conduct).
+  - The explanation of the veto must be reasonable and follow the [Idn code of conduct](https://wiki.idnecology.org/display/BESU/Code+of+Conduct).
   - A veto can be retracted, in that case the voting timeframe is reset and all approvals are removed.
   - It is bad form to veto, retract, and veto again.
   
@@ -142,7 +142,7 @@ I propose to add [maintainer github handle] as a Idn project maintainer.
 
 - [list significant achievements]
 
-Here are [their past contributions on Idn project](https://github.com/hyperledger/idn/commits?author=[user github handle]).
+Here are [their past contributions on Idn project](https://github.com/idnecology/idn/commits?author=[user github handle]).
 
 Voting ends two weeks from today.
 

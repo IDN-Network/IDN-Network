@@ -1,4 +1,4 @@
-# Contributing to Hyperledger Idn
+# Contributing to Idn ecology Idn
 ## :tada: Thanks for taking the time to contribute! :tada:
 
 Welcome to the Idn repository! The following links are a set of guidelines for contributing to this repo and its packages. These are mostly guidelines, not rules. Use your best judgement, and feel free to propose changes to this document in a pull request. Contributions come in the form of code submissions, writing documentation, raising issues, helping others in chat, and any other actions that help develop Idn.
@@ -7,8 +7,8 @@ Welcome to the Idn repository! The following links are a set of guidelines for c
 
 Having the following accounts is necessary for contributing code/issues to Idn.  
 * If you want to contribute code, you can make a [github account here](https://github.com).  
-* If you want to raise an issue, do so [in the issues tab](https://github.com/hyperledger/idn/issues).
-* To ask questions or chat with us, join our [Discord](https://discord.com/invite/hyperledger)
+* If you want to raise an issue, do so [in the issues tab](https://github.com/idnecology/idn/issues).
+* To ask questions or chat with us, join our [Discord](https://discord.com/invite/idnecology)
 * To edit pages in our wiki, you'll need a [Linux Foundation (LF) account].
 
 ### Guidelines for Non-Code and other Trivial Contributions
@@ -16,24 +16,24 @@ Please keep in mind that we do not accept non-code contributions like fixing com
 
 ### Useful contributing links
 
-* [I just have a quick question](https://wiki.hyperledger.org/display/BESU/I+just+have+a+quick+question)
+* [I just have a quick question](https://wiki.idnecology.org/display/BESU/I+just+have+a+quick+question)
 * [How to Contribute]
-* [First contribution workflow](https://wiki.hyperledger.org/display/BESU/First+contribution?src=contextnavpagetreemode)
-* [Did you find a bug?](https://wiki.hyperledger.org/display/BESU/Reporting+Bugs)
-* [Issues](https://wiki.hyperledger.org/display/BESU/Issues)
-* [DCO](https://wiki.hyperledger.org/display/BESU/DCO)
-* [Suggesting Enhancements](https://wiki.hyperledger.org/display/BESU/Suggesting+Enhancements)
-* [Pull Requests](https://wiki.hyperledger.org/display/BESU/Pull+Requests)
-* [Code Reviews](https://wiki.hyperledger.org/display/BESU/Code+Reviews)
+* [First contribution workflow](https://wiki.idnecology.org/display/BESU/First+contribution?src=contextnavpagetreemode)
+* [Did you find a bug?](https://wiki.idnecology.org/display/BESU/Reporting+Bugs)
+* [Issues](https://wiki.idnecology.org/display/BESU/Issues)
+* [DCO](https://wiki.idnecology.org/display/BESU/DCO)
+* [Suggesting Enhancements](https://wiki.idnecology.org/display/BESU/Suggesting+Enhancements)
+* [Pull Requests](https://wiki.idnecology.org/display/BESU/Pull+Requests)
+* [Code Reviews](https://wiki.idnecology.org/display/BESU/Code+Reviews)
 
 
-* [Security contributions](https://wiki.hyperledger.org/display/BESU/Security)
+* [Security contributions](https://wiki.idnecology.org/display/BESU/Security)
 
 ### Other important information
 
-* [Roadmap](https://wiki.hyperledger.org/pages/viewpage.action?pageId=24781786)
-* [Code of Conduct](https://wiki.hyperledger.org/display/BESU/Code+of+Conduct)
-* [Governance](https://wiki.hyperledger.org/display/BESU/Governance)
+* [Roadmap](https://wiki.idnecology.org/pages/viewpage.action?pageId=24781786)
+* [Code of Conduct](https://wiki.idnecology.org/display/BESU/Code+of+Conduct)
+* [Governance](https://wiki.idnecology.org/display/BESU/Governance)
 
-[How to Contribute]: https://wiki.hyperledger.org/display/BESU/How+to+Contribute
+[How to Contribute]: https://wiki.idnecology.org/display/BESU/How+to+Contribute
 [Linux Foundation (LF) account]: https://identity.linuxfoundation.org/

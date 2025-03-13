@@ -1,5 +1,5 @@
 /*
- * Copyright Hyperledger Idn contributors.
+ * Copyright Idn ecology Idn contributors.
  *
  * Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except in compliance with
  * the License. You may obtain a copy of the License at
@@ -153,8 +153,8 @@ configure(allprojects - project(':platform')) {
 
   repositories {
     maven {
-      url 'https://hyperledger.jfrog.io/hyperledger/idn-maven'
-      content { includeGroupByRegex('org\\.hyperledger\\..*') }
+      url 'https://idnecology.jfrog.io/idnecology/idn-maven'
+      content { includeGroupByRegex('org\\.idnecology\\..*') }
     }
     maven {
       url 'https://artifacts.consensys.net/public/maven/maven/'
@@ -192,7 +192,7 @@ configure(allprojects - project(':platform')) {
 
     components.all(BouncyCastleCapability)
     errorprone 'com.google.errorprone:error_prone_core'
-    // https://github.com/hyperledger/idn-errorprone-checks/
+    // https://github.com/idnecology/idn-errorprone-checks/
     errorprone "org.idnecology.idn:idn-errorprone-checks"
   }
 
@@ -220,7 +220,7 @@ configure(allprojects - project(':platform')) {
       // apply appropriate license header files.
       licenseHeaderFile("${rootDir}/gradle/spotless/java.former.license").named("older").onlyIfContentMatches("^/\\*\\r?\\n.*Copyright ConsenSys AG\\.")
       licenseHeaderFile("${rootDir}/gradle/spotless/java.former.date.license").named("older.year").onlyIfContentMatches("^/\\*\\r?\\n.* Copyright \\d{4} ConsenSys AG\\.")
-      licenseHeaderFile("${rootDir}/gradle/spotless/java.current.license").named("current").onlyIfContentMatches("^(?!/\\*\\r?\\n \\*.*(ConsenSys AG|Hyperledger Idn)\\.)")
+      licenseHeaderFile("${rootDir}/gradle/spotless/java.current.license").named("current").onlyIfContentMatches("^(?!/\\*\\r?\\n \\*.*(ConsenSys AG|Idn ecology Idn)\\.)")
     }
     // spotless check applied to build.gradle (groovy) files
     groovyGradle {
@@ -245,7 +245,7 @@ configure(allprojects - project(':platform')) {
 
       licenseHeaderFile("${rootDir}/gradle/spotless/java.former.license","^pragma solidity.+?").named("former").onlyIfContentMatches("^/\\*\\r?\\n.*Copyright ConsenSys AG\\.")
       licenseHeaderFile("${rootDir}/gradle/spotless/java.former.date.license","^pragma solidity.+?").named("former.date").onlyIfContentMatches("^/\\*\\r?\\n.* Copyright \\d{4} ConsenSys AG\\.")
-      licenseHeaderFile("${rootDir}/gradle/spotless/java.current.license","^pragma solidity.+?").named("current").onlyIfContentMatches("^(?!/\\*\\r?\\n \\*.*(ConsenSys AG|Hyperledger Idn)\\.)")
+      licenseHeaderFile("${rootDir}/gradle/spotless/java.current.license","^pragma solidity.+?").named("current").onlyIfContentMatches("^(?!/\\*\\r?\\n \\*.*(ConsenSys AG|Idn ecology Idn)\\.)")
     }
   }
 
@@ -551,7 +551,7 @@ subprojects {
           }
           pom {
             name = "Idn - ${project.name}"
-            url = 'http://github.com/hyperledger/idn'
+            url = 'http://github.com/idnecology/idn'
             licenses {
               license {
                 name = 'The Apache License, Version 2.0'
@@ -559,9 +559,9 @@ subprojects {
               }
             }
             scm {
-              connection = 'scm:git:git://github.com/hyperledger/idn.git'
-              developerConnection = 'scm:git:ssh://github.com/hyperledger/idn.git'
-              url = 'https://github.com/hyperledger/idn'
+              connection = 'scm:git:git://github.com/idnecology/idn.git'
+              developerConnection = 'scm:git:ssh://github.com/idnecology/idn.git'
+              url = 'https://github.com/idnecology/idn'
             }
           }
         }
@@ -571,10 +571,10 @@ subprojects {
     def artifactoryUser = project.hasProperty('artifactoryUser') ? project.property('artifactoryUser') : System.getenv('ARTIFACTORY_USER')
     def artifactoryKey = project.hasProperty('artifactoryApiKey') ? project.property('artifactoryApiKey') : System.getenv('ARTIFACTORY_KEY')
     def artifactoryRepo = System.getenv('ARTIFACTORY_REPO') ?: 'idn-maven'
-    def artifactoryOrg = System.getenv('ARTIFACTORY_ORG') ?: 'hyperledger'
+    def artifactoryOrg = System.getenv('ARTIFACTORY_ORG') ?: 'idnecology'
 
     artifactory {
-      contextUrl = "https://hyperledger.jfrog.io/${artifactoryOrg}"
+      contextUrl = "https://idnecology.jfrog.io/${artifactoryOrg}"
       publish {
         repository {
           repoKey = "${artifactoryRepo}"
@@ -792,7 +792,7 @@ artifactoryPublish {
 }
 
 def dockerBuildVersion = project.hasProperty('release.releaseVersion') ? project.property('release.releaseVersion') : "${rootProject.version}"
-def dockerOrgName = project.hasProperty('dockerOrgName') ? project.getProperty("dockerOrgName") : "hyperledger"
+def dockerOrgName = project.hasProperty('dockerOrgName') ? project.getProperty("dockerOrgName") : "idnecology"
 def dockerArtifactName = project.hasProperty("dockerArtifactName") ? project.getProperty("dockerArtifactName") : "idn"
 def dockerImageName = "${dockerOrgName}/${dockerArtifactName}"
 
@@ -1062,7 +1062,7 @@ tasks.register("verifyDistributions") {
 
 dependencies {
   errorprone 'com.google.errorprone:error_prone_core'
-  // https://github.com/hyperledger/idn-errorprone-checks/
+  // https://github.com/idnecology/idn-errorprone-checks/
   errorprone 'org.idnecology.idn:idn-errorprone-checks'
   implementation project(':idn')
   implementation project(':ethereum:evmtool')

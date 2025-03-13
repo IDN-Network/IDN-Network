@@ -1,5 +1,5 @@
 /*
- * Copyright contributors to Hyperledger Idn.
+ * Copyright contributors to Idn ecology Idn.
  *
  * Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except in compliance with
  * the License. You may obtain a copy of the License at
@@ -107,12 +107,12 @@ public class TxParseSubCommand implements Runnable {
     try {
       var transaction = TransactionDecoder.decodeOpaqueBytes(tx, EncodingContext.BLOCK_BODY);
 
-      // https://github.com/hyperledger/idn/blob/5fe49c60b30fe2954c7967e8475c3b3e9afecf35/ethereum/core/src/main/java/org/hyperledger/idn/ethereum/mainnet/MainnetTransactionValidator.java#L252
+      // https://github.com/idnecology/idn/blob/5fe49c60b30fe2954c7967e8475c3b3e9afecf35/ethereum/core/src/main/java/org/idnecology/idn/ethereum/mainnet/MainnetTransactionValidator.java#L252
       if (transaction.getChainId().isPresent() && !transaction.getChainId().get().equals(chainId)) {
         throw new Exception("wrong chain id");
       }
 
-      // https://github.com/hyperledger/idn/blob/5fe49c60b30fe2954c7967e8475c3b3e9afecf35/ethereum/core/src/main/java/org/hyperledger/idn/ethereum/mainnet/MainnetTransactionValidator.java#L270
+      // https://github.com/idnecology/idn/blob/5fe49c60b30fe2954c7967e8475c3b3e9afecf35/ethereum/core/src/main/java/org/idnecology/idn/ethereum/mainnet/MainnetTransactionValidator.java#L270
       if (transaction.getS().compareTo(halfCurveOrder) > 0) {
         throw new Exception("signature s out of range");
       }

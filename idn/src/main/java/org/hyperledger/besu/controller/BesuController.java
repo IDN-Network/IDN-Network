@@ -377,7 +377,7 @@ public class IdnController implements java.io.Closeable {
         } else {
           // TODO this should be changed to vanilla MergeIdnControllerBuilder and the Transition*
           // series of classes removed after we successfully transition to PoS
-          // https://github.com/hyperledger/idn/issues/2897
+          // https://github.com/idnecology/idn/issues/2897
           return new TransitionIdnControllerBuilder(builder, new MergeIdnControllerBuilder())
               .genesisConfig(genesisConfig);
         }

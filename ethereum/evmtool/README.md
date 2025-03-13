@@ -75,7 +75,7 @@ Assuming homebrew and SDKMan are both installed, the complete script is
 ```zsh
 sdk install java 21.0.3-tem 
 sdk use java 21.0.3-tem
-git clone https://github.com/hyperledger/idn
+git clone https://github.com/idnecology/idn
 cd idn
 ./gradlew installDist -x test
 cd ..

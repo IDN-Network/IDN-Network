@@ -3,7 +3,7 @@ version: '2'
 x-idn:
   &idn
   container_name: idn
-  image: "hyperledger/idn:develop"
+  image: "idnecology/idn:develop"
   cpuset: 4-5
   environment:
     - NODE_INGRESS_CONTRACT_ADDRESS=0x0000000000000000000000000000000000009999
@@ -26,7 +26,7 @@ x-caliper:
   entrypoint: caliper launch manager
   volumes:
     - ./config:/config:ro
-    - ./caliper-benchmarks:/hyperledger/caliper/workspace
+    - ./caliper-benchmarks:/idnecology/caliper/workspace
 
 services:
   caliper-offchain:

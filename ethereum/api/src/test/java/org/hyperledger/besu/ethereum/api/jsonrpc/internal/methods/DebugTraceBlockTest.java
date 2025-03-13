@@ -81,7 +81,7 @@ public class DebugTraceBlockTest {
     // to be able to get the hash of the block
     final var genesisConfig =
         GenesisConfig.fromResource(
-            "/org/hyperledger/idn/ethereum/api/jsonrpc/trace/chain-data/genesis.json");
+            "/org/idnecology/idn/ethereum/api/jsonrpc/trace/chain-data/genesis.json");
     final ProtocolSpecAdapters protocolSpecAdapters =
         ProtocolSpecAdapters.create(
             0,

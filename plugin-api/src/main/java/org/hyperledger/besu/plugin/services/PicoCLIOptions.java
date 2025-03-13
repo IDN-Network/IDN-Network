@@ -22,7 +22,7 @@ package org.idnecology.idn.plugin.services;
  * <p>This service will be available during the registration callbacks.
  *
  * <p>CLI arguments should conform to the <a
- * href="https://github.com/hyperledger/idn/blob/master/CLI-STYLE-GUIDE.md">CLI-STYLE-GUIDE.md</a>
+ * href="https://github.com/idnecology/idn/blob/master/CLI-STYLE-GUIDE.md">CLI-STYLE-GUIDE.md</a>
  * conventions.
  */
 public interface PicoCLIOptions extends IdnService {

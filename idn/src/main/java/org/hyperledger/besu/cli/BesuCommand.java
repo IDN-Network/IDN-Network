@@ -274,7 +274,7 @@ import picocli.CommandLine.ParameterException;
     footer = {
       "%n%n@|fg(cyan) To get started quickly, just choose a network to sync and a profile to run with suggested defaults:|@",
       "%n@|fg(cyan) for Mainnet|@ --network=mainnet --profile=[minimalist_staker|staker]",
-      "%nMore info and other profiles at https://idn.hyperledger.org%n"
+      "%nMore info and other profiles at https://idn.idnecology.org%n"
     })
 public class IdnCommand implements DefaultCommandValues, Runnable {
   @SuppressWarnings("PrivateStaticFinalLoggers")

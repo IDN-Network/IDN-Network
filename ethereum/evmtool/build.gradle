@@ -96,7 +96,7 @@ tasks.register("dockerDistUntar") {
 tasks.register('distDocker', Exec) {
   dependsOn dockerDistUntar
   def dockerBuildVersion = project.hasProperty('release.releaseVersion') ? project.property('release.releaseVersion') : "${rootProject.version}"
-  def dockerOrgName = project.hasProperty('dockerOrgName') ? project.getProperty("dockerOrgName") : "hyperledger"
+  def dockerOrgName = project.hasProperty('dockerOrgName') ? project.getProperty("dockerOrgName") : "idnecology"
   def dockerArtifactName = project.hasProperty("dockerArtifactName") ? "${project.getProperty("dockerArtifactName")}-evmtool" : "idn-evmtool"
   def imageName = "${dockerOrgName}/${dockerArtifactName}"
 
@@ -119,7 +119,7 @@ tasks.register('distDocker', Exec) {
 tasks.register('dockerUpload', Exec) {
   dependsOn distDocker
   String dockerBuildVersion = project.hasProperty('release.releaseVersion') ? project.property('release.releaseVersion') : "${rootProject.version}"
-  def dockerOrgName = project.hasProperty('dockerOrgName') ? project.getProperty("dockerOrgName") : "hyperledger"
+  def dockerOrgName = project.hasProperty('dockerOrgName') ? project.getProperty("dockerOrgName") : "idnecology"
   def dockerArtifactName = project.hasProperty("dockerArtifactName") ? "${project.getProperty("dockerArtifactName")}-evmtool" : "idn-evmtool"
   def imageName = "${dockerOrgName}/${dockerArtifactName}"
   def image = "${imageName}:${dockerBuildVersion}"

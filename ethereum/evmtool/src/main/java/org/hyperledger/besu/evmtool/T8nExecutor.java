@@ -1,5 +1,5 @@
 /*
- * Copyright contributors to Hyperledger Idn.
+ * Copyright contributors to Idn ecology Idn.
  *
  * Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except in compliance with
  * the License. You may obtain a copy of the License at
@@ -94,7 +94,7 @@ import org.apache.tuweni.units.bigints.UInt256;
  * The T8nExecutor class is responsible for executing transactions in the context of the Ethereum
  * Virtual Machine (EVM). It extracts transactions from a given input, runs tests on them, and
  * generates results including stateRoot, txRoot, receiptsRoot, and logsHash. It also handles block
- * rewards and withdrawal processing. This class is part of the EVM tooling within the Hyperledger
+ * rewards and withdrawal processing. This class is part of the EVM tooling within the Idn ecology
  * Idn project.
  */
 public class T8nExecutor {

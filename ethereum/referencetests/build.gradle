@@ -24,7 +24,7 @@ def blockchainReferenceTests = tasks.register("blockchainReferenceTests")  {
     fileTree(referenceTestsPath),
     file("src/reference-test/templates/BlockchainReferenceTest.java.template"),
     "BlockchainTests",
-    "$generatedTestsPath/org/hyperledger/idn/ethereum/vm/blockchain",
+    "$generatedTestsPath/org/idnecology/idn/ethereum/vm/blockchain",
     "BlockchainReferenceTest",
     "org.idnecology.idn.ethereum.vm.blockchain",
     ("BlockchainTests/InvalidBlocks/bcExpectSection") // exclude test for test filling tool
@@ -41,7 +41,7 @@ def eipBlockchainReferenceTests = tasks.register("eipBlockchainReferenceTests") 
     fileTree(referenceTestsPath),
     file("src/reference-test/templates/BlockchainReferenceTest.java.template"),
     "EIPTests${File.separatorChar}BlockchainTests",
-    "$generatedTestsPath/org/hyperledger/idn/ethereum/vm/eip",
+    "$generatedTestsPath/org/idnecology/idn/ethereum/vm/eip",
     "EIPBlockchainReferenceTest",
     "org.idnecology.idn.ethereum.vm.eip",
     )
@@ -57,7 +57,7 @@ def eipStateReferenceTests = tasks.register("eipStateReferenceTests")  {
     fileTree(referenceTestsPath),
     file("src/reference-test/templates/GeneralStateReferenceTest.java.template"),
     "EIPTests${File.separatorChar}StateTests",
-    "$generatedTestsPath/org/hyperledger/idn/ethereum/vm/eip",
+    "$generatedTestsPath/org/idnecology/idn/ethereum/vm/eip",
     "EIPStateReferenceTest",
     "org.idnecology.idn.ethereum.vm.eip",
     )
@@ -80,7 +80,7 @@ def executionSpecTests = tasks.register("executionSpecTests") {
     fileTree(referenceTestsPath + "/fixtures/blockchain_tests"),
     file("src/reference-test/templates/BlockchainReferenceTest.java.template"),
     "fixtures",
-    "$generatedTestsPath/org/hyperledger/idn/ethereum/vm/executionspec",
+    "$generatedTestsPath/org/idnecology/idn/ethereum/vm/executionspec",
     "ExecutionSpecBlockchainTest",
     "org.idnecology.idn.ethereum.vm.executionspec",
     )
@@ -90,7 +90,7 @@ def executionSpecTests = tasks.register("executionSpecTests") {
     fileTree(referenceTestsPath + "/fixtures/state_tests"),
     file("src/reference-test/templates/GeneralStateReferenceTest.java.template"),
     "fixtures",
-    "$generatedTestsPath/org/hyperledger/idn/ethereum/vm/executionspec",
+    "$generatedTestsPath/org/idnecology/idn/ethereum/vm/executionspec",
     "ExecutionSpecStateTest",
     "org.idnecology.idn.ethereum.vm.executionspec",
     )
@@ -106,7 +106,7 @@ def generalstateReferenceTests = tasks.register("generalstateReferenceTests")  {
     fileTree(referenceTestsPath),
     file("src/reference-test/templates/GeneralStateReferenceTest.java.template"),
     "GeneralStateTests",
-    "$generatedTestsPath/org/hyperledger/idn/ethereum/vm/generalstate",
+    "$generatedTestsPath/org/idnecology/idn/ethereum/vm/generalstate",
     "GeneralStateReferenceTest",
     "org.idnecology.idn.ethereum.vm.generalstate",
     )
@@ -122,7 +122,7 @@ def generalstateRegressionReferenceTests = tasks.register("generalstateRegressio
     fileTree(referenceTestsPath),
     file("src/reference-test/templates/GeneralStateReferenceTest.java.template"),
     "regressions",
-    "$generatedTestsPath/org/hyperledger/idn/ethereum/vm/generalstate",
+    "$generatedTestsPath/org/idnecology/idn/ethereum/vm/generalstate",
     "GeneralStateRegressionReferenceTest",
     "org.idnecology.idn.ethereum.vm.generalstate"
     )
@@ -138,7 +138,7 @@ def eofReferenceTests = tasks.register("eofReferenceTests") {
     fileTree(referenceTestsPath),
     file("src/reference-test/templates/EOFReferenceTest.java.template"),
     "EOFTests",
-    "$generatedTestsPath/org/hyperledger/idn/ethereum/vm/eof",
+    "$generatedTestsPath/org/idnecology/idn/ethereum/vm/eof",
     "EOFReferenceTest",
     "org.idnecology.idn.ethereum.vm.eof"
     )

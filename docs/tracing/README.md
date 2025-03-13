@@ -1,6 +1,6 @@
 # Tracing
 
-Hyperledger Idn integrates with the [open-telemetry](https://opentelemetry.io/) project to integrate tracing reporting.
+Idn ecology Idn integrates with the [open-telemetry](https://opentelemetry.io/) project to integrate tracing reporting.
 
 This allows reporting all JSON-RPC traffic as traces.
 

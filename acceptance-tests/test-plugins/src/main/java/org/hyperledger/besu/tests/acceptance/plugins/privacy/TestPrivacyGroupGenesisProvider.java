@@ -67,7 +67,7 @@ public class TestPrivacyGroupGenesisProvider implements PrivacyGroupGenesisProvi
               // to deploy
               // the contract
               // you can generate it using the solc --bin-runtime flag
-              // cd ./acceptance-tests/tests/src/test/java/org/hyperledger/idn/tests/web3j/
+              // cd ./acceptance-tests/tests/src/test/java/org/idnecology/idn/tests/web3j/
               // docker run -v $PWD:/sources ethereum/solc:0.5.0 -o /sources/output --bin-runtime
               // /sources/EventEmitter.sol --overwrite
 

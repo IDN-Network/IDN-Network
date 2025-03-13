@@ -1,5 +1,5 @@
 /*
- * Copyright contributors to Hyperledger Idn.
+ * Copyright contributors to Idn ecology Idn.
  *
  * Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except in compliance with
  * the License. You may obtain a copy of the License at
@@ -98,7 +98,7 @@ class DNSDaemonTest {
     vertx.deployVerticle(dnsDaemon, options);
   }
 
-  @Disabled("test is flaky see https://github.com/hyperledger/idn/issues/8373")
+  @Disabled("test is flaky see https://github.com/idnecology/idn/issues/8373")
   @Test
   @DisplayName("Test DNS Daemon with periodic lookup to a mock DNS server")
   void testDNSDaemonPeriodic(final Vertx vertx, final VertxTestContext testContext)

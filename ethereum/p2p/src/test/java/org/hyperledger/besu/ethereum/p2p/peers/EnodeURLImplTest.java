@@ -963,7 +963,7 @@ public class EnodeURLImplTest {
 
   @Test
   public void toURIWithoutDiscoveryPortShouldKeepDomainWhenFound() {
-    String enodeString = String.format("enode://%s@%s:%d", VALID_NODE_ID, "hyperledger.org", 9999);
+    String enodeString = String.format("enode://%s@%s:%d", VALID_NODE_ID, "idnecology.org", 9999);
 
     final EnodeURL enodeA =
         EnodeURLImpl.fromString(
@@ -971,7 +971,7 @@ public class EnodeURLImplTest {
             ImmutableEnodeDnsConfiguration.builder().dnsEnabled(true).updateEnabled(true).build());
 
     URI expected =
-        URI.create(String.format("enode://%s@%s:%d", VALID_NODE_ID, "hyperledger.org", 9999));
+        URI.create(String.format("enode://%s@%s:%d", VALID_NODE_ID, "idnecology.org", 9999));
     assertThat(enodeA.toURIWithoutDiscoveryPort()).isEqualTo(expected);
   }
 
@@ -1050,7 +1050,7 @@ public class EnodeURLImplTest {
 
   @Test
   public void getHostShouldReturnHostNameWhenDomainFound() {
-    String site = "hyperledger.org";
+    String site = "idnecology.org";
     String enodeString = String.format("enode://%s@%s:%d", VALID_NODE_ID, site, 9999);
     final EnodeURL enode =
         EnodeURLImpl.fromString(

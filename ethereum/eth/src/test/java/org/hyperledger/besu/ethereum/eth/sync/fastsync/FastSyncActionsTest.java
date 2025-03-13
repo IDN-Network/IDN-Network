@@ -65,7 +65,7 @@ import org.junit.jupiter.params.provider.ArgumentsProvider;
 import org.junit.jupiter.params.provider.ArgumentsSource;
 
 @Disabled(
-    "Fast sync is broken - https://github.com/hyperledger/idn/issues/7511 and deprecated, and this test is flaky")
+    "Fast sync is broken - https://github.com/idnecology/idn/issues/7511 and deprecated, and this test is flaky")
 public class FastSyncActionsTest {
   private final WorldStateStorageCoordinator worldStateStorageCoordinator =
       mock(WorldStateStorageCoordinator.class);

@@ -32,7 +32,7 @@ public class InvalidRLPRefTest {
 
   private static final String[] TEST_CONFIG_FILES = {
     // TODO: upstream these additional tests to the ethereum tests repo
-    "org/hyperledger/idn/ethereum/rlp/invalidRLPTest.json", "RLPTests/invalidRLPTest.json"
+    "org/idnecology/idn/ethereum/rlp/invalidRLPTest.json", "RLPTests/invalidRLPTest.json"
   };
 
   public static Stream<Arguments> getTestParametersForConfig() {

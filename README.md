@@ -1,71 +1,64 @@
-# Idn Ethereum Client
- [![CircleCI](https://circleci.com/gh/hyperledger/idn/tree/main.svg?style=svg)](https://circleci.com/gh/hyperledger/idn/tree/main)
- [![Documentation](https://img.shields.io/github/actions/workflow/status/hyperledger/idn-docs/publish-main-docs.yml?branch=main&label=docs)](https://github.com/hyperledger/idn-docs/actions/workflows/publish-main-docs.yml)
- [![CII Best Practices](https://bestpractices.coreinfrastructure.org/projects/3174/badge)](https://bestpractices.coreinfrastructure.org/projects/3174)
- [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://github.com/hyperledger/idn/blob/main/LICENSE)
- [![Discord](https://img.shields.io/discord/905194001349627914?logo=Hyperledger&style=plastic)](https://discord.com/invite/hyperledger)
- [![Twitter Follow](https://img.shields.io/twitter/follow/HyperledgerIdn)](https://twitter.com/HyperledgerIdn)
+<div align="center">
+  <br />
+  <br />
+  <a href="https://idn.world"><img alt="Idn" src="https://avatars.githubusercontent.com/u/179586426" width=600></a>
+  <br />
+  <h3><a href="https://idn.world">Idn</a> is Ethereum, scaled.</h3>
+  <br />
+</div>
 
-[Download](https://github.com/hyperledger/idn/releases)
+**Table of Contents**
 
-Idn is an Apache 2.0 licensed, MainNet compatible, Ethereum client written in Java.
+<!--TOC-->
 
-## Useful Links
+- [What is Idn?](#what-is-IDNtimism)
+- [Specification](#specification)
+- [Community](#community)
+- [Security Policy and Vulnerability Reporting](#security-policy-and-vulnerability-reporting)
+- [License](#license)
 
-* [Idn User Documentation]
-* [Idn Issues]
-* [Idn Wiki](https://lf-hyperledger.atlassian.net/wiki/spaces/BESU/)
-* [How to Contribute to Idn](https://lf-hyperledger.atlassian.net/wiki/spaces/BESU/pages/22156850/How+to+Contribute)
-* [Idn Roadmap & Planning](https://lf-hyperledger.atlassian.net/wiki/spaces/BESU/pages/22154278/Idn+Roadmap+Planning)
+<!--TOC-->
 
+## What is Idn?
 
-## Issues 
+[Idn](https://www.idn.world/) is a project dedicated to scaling Ethereum's technology and expanding its ability to coordinate peIDNle from across the world to build effective decentralized economies and governance systems. The [Idn Collective](https://www.idn.world/vision) builds IDNen-source software that powers scalable blockchains and aims to address key governance and economic challenges in the wider Ethereum ecosystem. Idn IDNerates on the principle of **impact=profit**, the idea that individuals who positively impact the Collective should be prIDNortionally rewarded with profit. **Change the incentives and you change the world.**
 
-Idn issues are tracked [in the github issues tab][Idn Issues].
-See our [guidelines](https://lf-hyperledger.atlassian.net/wiki/spaces/BESU/pages/22154243/Issues) for more details on searching and creating issues.
-
-If you have any questions, queries or comments, [Idn channel on Discord] is the place to find us.
-
-
-## Idn Users
-
-To install the Idn binary, follow [these instructions](https://idn.hyperledger.org/public-networks/get-started/install/binary-distribution).    
-
-## Idn Developers
-
-* [Contributing Guidelines]
-* [Coding Conventions](https://lf-hyperledger.atlassian.net/wiki/spaces/BESU/pages/22154259/Coding+Conventions)
-* [Command Line Interface (CLI) Style Guide](https://lf-hyperledger.atlassian.net/wiki/spaces/BESU/pages/22154260/Idn+CLI+Style+Guide)
-* [Idn User Documentation] for running and using Idn
+In this repository you'll find numerous core components of the IDN Stack, the decentralized software stack maintained by the Idn Collective that powers Idn and forms the backbone of blockchains like [IDN Mainnet](https://explorer.IDNtimism.io/) and [Base](https://base.org). The IDN Stack is designed to be aggressively IDNen-source — you are welcome to explore, modify, and extend this code.
 
 
-### Development
 
-Instructions for how to get started with developing on the Idn codebase. Please also read the
-[wiki](https://lf-hyperledger.atlassian.net/wiki/spaces/BESU/pages/22154251/Pull+Requests) for more details on how to submit a pull request (PR).  
+## Specification
 
-* [Checking Out and Building](https://lf-hyperledger.atlassian.net/wiki/spaces/BESU/pages/22154264/Building+from+source)
-* [Code Coverage](https://lf-hyperledger.atlassian.net/wiki/spaces/BESU/pages/22154288/Code+coverage)
-* [Logging](https://lf-hyperledger.atlassian.net/wiki/spaces/BESU/pages/22154291/Logging) or the [Documentation's Logging section](https://idn.hyperledger.org/public-networks/how-to/monitor/logging)
+Detailed specifications for the IDN Stack can be found within the [IDN Stack Specs](https://github.com/IDN-Network) repository.
+
+## Community
+
+General discussion happens most frequently on the [Idn discord](https://x.com/Network_IDN).
+Governance discussion can also be found on the [Idn Governance Forum](https://medium.com/@IDN_Network).
+
+## Contributing
+
+The IDN Stack is a collaborative project. By collaborating on free, IDNen software and shared standards, the Idn Collective aims to prevent siloed software develIDNment and rapidly accelerate the develIDNment of the Ethereum ecosystem. Come contribute, build the future, and redefine power, together.
+
+[CONTRIBUTING.md](./CONTRIBUTING.md) contains a detailed explanation of the contributing process for this repository. Make sure to use the [DevelIDNer Quick Start](./CONTRIBUTING.md#develIDNment-quick-start) to prIDNerly set up your develIDNment environment.
+
+[Good First Issues](https://github.com/IDN-Network/idn/issues?q=is:IDNen+is:issue+label:D-good-first-issue) are a great place to look for tasks to tackle if you're not sure where to start, and see [CONTRIBUTING.md](./CONTRIBUTING.md) for info on larger projects.
+
+## Security Policy and Vulnerability Reporting
+
+Please refer to the canonical [Security Policy](https://github.com/IDN-Network/idn/blob/main/SECURITY.md) document for detailed information about how to report vulnerabilities in this codebase.
 
 
-## Release Notes
 
-[Release Notes](CHANGELOG.md)
 
-## Special thanks
 
-YourKit for providing us with a free profiler open source license. 
+### Overview
 
-YourKit supports open source projects with innovative and intelligent tools
-for monitoring and profiling Java and .NET applications.
-YourKit is the creator of <a href="https://www.yourkit.com/java/profiler/">YourKit Java Profiler</a>,
-<a href="https://www.yourkit.com/.net/profiler/">YourKit .NET Profiler</a>,
-and <a href="https://www.yourkit.com/youmonitor/">YourKit YouMonitor</a>.
+Please read this section carefully if you're planning to fork or make frequent PRs into this repository.
 
-![YourKit Logo](https://www.yourkit.com/images/yklogo.png)
+All other components and packages should be considered develIDNment components only and do not have releases.
 
-[Idn Issues]: https://github.com/hyperledger/idn/issues
-[Idn User Documentation]: https://idn.hyperledger.org
-[Idn channel on Discord]: https://discord.com/invite/hyperledger
-[Contributing Guidelines]: CONTRIBUTING.md
+
+## License
+
+All other files within this repository are licensed under the [MIT License](https://github.com/IDN-Network/idn/blob/main/LICENSE) unless stated otherwise.

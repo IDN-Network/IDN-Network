@@ -1,5 +1,5 @@
 /*
- * Copyright contributors to Hyperledger Idn.
+ * Copyright contributors to Idn ecology Idn.
  *
  * Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except in compliance with
  * the License. You may obtain a copy of the License at
@@ -160,10 +160,10 @@ public class Fuzzer {
 
     Map<String, Integer> hitMap = new HashMap<>();
     // preload some values so we don't get false hits in coverage we don't care about.
-    hitMap.put("org/hyperledger/idn/testfuzz/EofContainerSubCommand", 100);
-    hitMap.put("org/hyperledger/idn/testfuzz/Fuzzer", 100);
-    hitMap.put("org/hyperledger/idn/testfuzz/Fuzzer$HitCounter", 100);
-    hitMap.put("org/hyperledger/idn/testfuzz/InternalClient", 100);
+    hitMap.put("org/idnecology/idn/testfuzz/EofContainerSubCommand", 100);
+    hitMap.put("org/idnecology/idn/testfuzz/Fuzzer", 100);
+    hitMap.put("org/idnecology/idn/testfuzz/Fuzzer$HitCounter", 100);
+    hitMap.put("org/idnecology/idn/testfuzz/InternalClient", 100);
 
     while (true) {
       byte[] buf = this.corpus.generateInput();

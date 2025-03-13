@@ -128,9 +128,9 @@ dependencies {
 artifacts { testSupportArtifacts testSupportJar }
 
 tasks.register('generateTestBlockchain') {
-  def srcFiles = 'src/test/resources/org/hyperledger/idn/ethereum/api/jsonrpc/trace/chain-data'
+  def srcFiles = 'src/test/resources/org/idnecology/idn/ethereum/api/jsonrpc/trace/chain-data'
   def dataPath = new File("$buildDir/generated/data")
-  def blocksBin = "$buildDir/resources/test/org/hyperledger/idn/ethereum/api/jsonrpc/trace/chain-data/blocks.bin"
+  def blocksBin = "$buildDir/resources/test/org/idnecology/idn/ethereum/api/jsonrpc/trace/chain-data/blocks.bin"
   inputs.dir(srcFiles)
   outputs.file(blocksBin)
   dependsOn(configurations.testResourceGeneration)
