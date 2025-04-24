@@ -3,7 +3,7 @@
   <br />
   <a href="https://idn.world"><img alt="Idn" src="https://avatars.githubusercontent.com/u/179586426" width=600></a>
   <br />
-  <h3><a href="https://idn.world">Idn</a> is Ethereum, scaled.</h3>
+  <h3><a href="https://idn.world">IDN</a> is Ethereum, scaled.</h3>
   <br />
 </div>
 
@@ -21,7 +21,7 @@
 
 ## What is IDN?
 
-[IDN](https://www.idn.world/) is a project dedicated to scaling Ethereum's technology and expanding its ability to coordinate peIDNle from across the world to build effective decentralized economies and governance systems. The [IDN Collective](https://www.idn.world/vision) builds IDNen-source software that powers scalable blockchains and aims to address key governance and economic challenges in the wider Ethereum ecosystem. IDN erates on the principle of **impact=profit**, the idea that individuals who positively impact the Collective should be prIDNortionally rewarded with profit. **Change the incentives and you change the world.**
+[IDN](https://www.idn.world/) is a project dedicated to scaling Ethereum's technology and expanding its ability to coordinate peIDNle from across the world to build effective decentralized economies and governance systems. The [IDN Collective](https://www.idn.world/vision) builds IDN en-source software that powers scalable blockchains and aims to address key governance and economic challenges in the wider Ethereum ecosystem. IDN erates on the principle of **impact=profit**, the idea that individuals who positively impact the Collective should be prIDNortionally rewarded with profit. **Change the incentives and you change the world.**
 
 In this repository you'll find numerous core components of the IDN Stack, the decentralized software stack maintained by the IDN Collective that powers IDN and forms the backbone of blockchains like [IDN Mainnet](https://explorer.IDNtimism.io/) and [Base](https://base.org). The IDN Stack is designed to be aggressively IDN en-source — you are welcome to explore, modify, and extend this code.
 
