@@ -6,6 +6,8 @@
   <h3><a href="https://idn.world">IDN</a> IDN is built on the Ethereum Layer2 expansion version.</h3>
   It has a faster block packaging speed and an expandable encrypted network.
   <br />
+
+  
 </div>
 
 **Table of Contents**
